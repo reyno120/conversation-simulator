@@ -1,4 +1,5 @@
 import './css/App.css';
+import './css/reset.css';
 // import video from './images/Scene-cabinbg.mp4';
 import Homepage from './components/Homepage.jsx';
 
