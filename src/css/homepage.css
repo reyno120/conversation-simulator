@@ -49,10 +49,24 @@
 .no-display {
     display: none;
 }
-.homepage video {
+.faculty-video {
+    position: absolute;
+    top: 54%;
+    right: 60%;
+    width: 40%;
+    animation: slide-up 0.5s;
+}
+.friend-video {
     position: absolute;
     top: 54%;
     right: 31%;
+    width: 40%;
+    animation: slide-up 0.5s;
+}
+.student-video {
+    position: absolute;
+    top: 54%;
+    right: 2%;
     width: 40%;
     animation: slide-up 0.5s;
 }
