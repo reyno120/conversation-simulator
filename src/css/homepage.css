@@ -78,3 +78,75 @@
         top: 54%;
     }
 }
+@media screen and (max-width: 1366px) {
+    .homepage h1 {
+        font-size: 3.375rem;
+    }
+
+    .faculty-video {
+        top: 59%;
+        right: 59.5%;
+        animation: slide-up 0.5s
+    }
+    .friend-video {
+        top: 59%;
+        right: 30%;
+        animation: slide-up 0.5s
+    }
+    .student-video {
+        top: 59%;
+        right: 1.5%;
+        animation: slide-up 0.5s
+    }
+
+    @keyframes slide-up {
+        0% {
+            top: 70%;
+        }
+        100% {
+            top: 59%;
+        }
+    }
+
+    .roles h2 {
+        font-size: 4rem;
+    }
+    .roles p {
+        font-size: 0.875rem;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .roles {
+        flex-direction: column;
+        align-items: center;
+    }
+    .homepage svg {
+        margin-top: 0.5em;
+        width: 75%;
+    }
+
+    .homepage h1 {
+        font-size: 2rem;
+    }
+
+    .faculty-video {
+        display: none;
+    }
+    .friend-video {
+        display: none;
+    }
+    .student-video {
+        display: none;
+    }
+
+    .roles {
+        margin-top: 4.5em;
+    }
+    .roles h2 {
+        font-size: 3rem;
+    }
+    .roles p {
+        margin-bottom: 5em;
+    }
+}
