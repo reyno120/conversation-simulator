@@ -52,21 +52,21 @@
 .faculty-video {
     position: absolute;
     top: 54%;
-    right: 60%;
+    right: 59%;
     width: 40%;
     animation: slide-up 0.5s;
 }
 .friend-video {
     position: absolute;
     top: 54%;
-    right: 31%;
+    right: 29%;
     width: 40%;
     animation: slide-up 0.5s;
 }
 .student-video {
     position: absolute;
     top: 54%;
-    right: 2%;
+    right: 0;
     width: 40%;
     animation: slide-up 0.5s;
 }

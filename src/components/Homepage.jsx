@@ -1,6 +1,7 @@
 import '../css/homepage.css';
 import { useState, useEffect, useRef } from 'react';
 import video from '../video/scene1.webm';
+import video1 from '../video/scene2.webm';
 
 function Homepage() {
   const [faculty, setFaculty] = useState(false);
@@ -86,7 +87,7 @@ function Homepage() {
           </div>
 
           <video autoPlay loop muted ref={facultyVid} className={faculty ? "faculty-video" : "faculty-video no-display"}>
-            <source src={video} type='video/webm' />
+            <source src={video1} type='video/webm' />
           </video>
 
           <video autoPlay loop muted ref={friendVid} className={friend ? "friend-video" : "friend-video no-display"}>
