@@ -4,7 +4,7 @@ import video from '../video/scene1.webm';
 import video1 from '../video/scene2.webm';
 import video2 from '../video/scene3.webm';
 
-function Homepage() {
+function Homepage(props) {
   const [faculty, setFaculty] = useState(false);
   const [friend, setFriend] = useState(false);
   const [student, setStudent] = useState(false);
@@ -61,8 +61,9 @@ function Homepage() {
     }
   }
 
+
     return (
-      <div className="homepage">
+      <div className={`homepage ${props.translate}`}>
           <div className={faculty || friend || student ? "faded" : ""}>
             <h1>Choose which role you're interested in!</h1>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 951.5 47.5"><defs><style></style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path stroke={faculty || friend || student ? '#A4A4A4' : '#ffffff'} fill="none" strokeMiterlimit="10" className="cls-1" d="M0,.5C596.36,1.71,950.93,4.43,951,9.22c.11,7.29-823.06,14.24-823,24.41,0,4.6,168.43,9.11,566,13.37"/></g></g></svg>
@@ -70,17 +71,17 @@ function Homepage() {
 
           <div className="roles">
 
-              <div className={friend || student ? "role-faculty faded" : "role-faculty"} onMouseEnter={() => setSelector('faculty', true)} onMouseLeave={() => setSelector('faculty', false)}>
+              <div className={friend || student ? "role-faculty faded" : "role-faculty"} onMouseEnter={() => setSelector('faculty', true)} onMouseLeave={() => setSelector('faculty', false)} onClick={() => props.selectRole('faculty')}>
                 <h2>Faculty</h2>
                 <p>member who notices a student is struggling</p>
               </div>
 
-              <div className={faculty || student ? "role-friend faded" : "role-friend"} onMouseEnter={() => setSelector('friend', true)} onMouseLeave={() => setSelector('friend', false)}>
+              <div className={faculty || student ? "role-friend faded" : "role-friend"} onMouseEnter={() => setSelector('friend', true)} onMouseLeave={() => setSelector('friend', false)} onClick={() => props.selectRole('friend')}> 
                 <h2>Friend</h2>
                 <p>of someone who is struggling</p>
               </div>
 
-              <div className={faculty || friend ? "role-student faded" : "role-student"} onMouseEnter={() => setSelector('student', true)} onMouseLeave={() => setSelector('student', false)}>
+              <div className={faculty || friend ? "role-student faded" : "role-student"} onMouseEnter={() => setSelector('student', true)} onMouseLeave={() => setSelector('student', false)} onClick={() => props.selectRole('student')}>
                 <h2>Student</h2>
                 <p>who is struggling with their mental health</p>
               </div>

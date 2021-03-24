@@ -1,9 +1,6 @@
 @import url("https://use.typekit.net/vhk2nyf.css");
 
 .homepage {
-    background-image: url('../images/chalkboard.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
     text-align: center;
@@ -150,3 +147,16 @@
         margin-bottom: 5em;
     }
 }
+
+
+.slide-up-page {
+    animation: slide-up-page 1s forwards;
+  }
+  @keyframes slide-up-page {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }

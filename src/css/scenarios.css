@@ -1,0 +1,66 @@
+.scenarios-page {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    animation: slide-up-page 1s forwards;
+    font-family: adobe-handwriting-tiffany, sans-serif;
+    font-style: normal;
+    color: white;
+}
+.scenarios-page h1 {
+    margin-bottom: 0;
+    padding-top: 1.5em;
+    font-size: 3.875rem;
+    font-weight: 300;
+}
+.scenarios-page svg {
+    width: 64%;
+}
+.scenarios {
+    /* margin-top: 6em; for three scenarios */
+    margin-top: 10em;
+    display: flex;
+    flex-direction: column;
+}
+.scenario1 {
+    margin: 0 auto 0 auto;
+    width: 27%;
+    height: 7em;
+}
+.scenario1, .scenario2, .scenario3 {
+    cursor: pointer;
+}
+.scenarios-page h2 {
+    font-size: 3.875rem;
+    font-weight: 300;
+}
+.scenarios-page p {
+    font-size: 1.375rem;
+    margin: auto;
+    margin-bottom: 5em;
+}
+.student-video-test {
+    position: absolute;
+    top: 54%;
+    right: -12%;
+    width: 40%;
+    animation: slide-left-in 1.5s ease;
+}
+@keyframes slide-left-in {
+    30% {
+        transform: translateX(100%);
+    }
+    /* 20% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(-1%);
+    }
+    60% {
+        transform: translateX(1%);
+    } */
+    100% {
+        transform: translateX(0%);
+    }
+}
