@@ -3,7 +3,6 @@
     height: 100vh;
     text-align: center;
     position: relative;
-    animation: slide-up-page 1s forwards;
     font-family: adobe-handwriting-tiffany, sans-serif;
     font-style: normal;
     color: white;
@@ -45,6 +44,8 @@
     top: 54%;
     right: -12%;
     width: 40%;
+}
+.video-animation {
     animation: slide-left-in 1.5s ease;
 }
 @keyframes slide-left-in {

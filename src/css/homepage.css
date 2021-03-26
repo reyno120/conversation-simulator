@@ -96,15 +96,6 @@
         animation: slide-up 0.5s
     }
 
-    @keyframes slide-up {
-        0% {
-            top: 70%;
-        }
-        100% {
-            top: 59%;
-        }
-    }
-
     .roles h2 {
         font-size: 4rem;
     }
