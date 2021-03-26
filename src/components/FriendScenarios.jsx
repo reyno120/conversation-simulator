@@ -33,7 +33,7 @@ function FriendScenarios(props) {
 
             </div>
 
-            <video autoPlay loop muted className={`student-video-test ${props.videoAnimation}`}>
+            <video autoPlay loop muted className={`student-video-eyegaze ${props.videoAnimation}`}>
                 <source src={video} type='video/webm' />
             </video>
 

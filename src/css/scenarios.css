@@ -8,10 +8,12 @@
     color: white;
 }
 .scenarios-page h1 {
+    margin: auto;
     margin-bottom: 0;
     padding-top: 1.5em;
     font-size: 3.875rem;
     font-weight: 300;
+    width: 70%;
 }
 .scenarios-page svg {
     width: 64%;
@@ -39,7 +41,7 @@
     margin: auto;
     margin-bottom: 5em;
 }
-.student-video-test {
+.student-video-eyegaze {
     position: absolute;
     top: 54%;
     right: -12%;
@@ -63,5 +65,42 @@
     } */
     100% {
         transform: translateX(0%);
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .scenarios-page h1 {
+        font-size: 3.375rem;
+    }
+    .scenarios-page h2 {
+        font-size: 3rem;
+    }
+    .scenarios-page p {
+        font-size: 0.875rem;
+    }
+    .student-video-eyegaze {
+        top: 54%;
+        right: -15%;
+        width: 45%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .scenarios-page h1 {
+        font-size: 2rem;
+        width: 80%;
+    }
+    .scenarios-page svg {
+        margin-top: 0.5em;
+        width: 77%;
+    }
+    .student-video-eyegaze {
+        display: none;
+    }
+    .scenario1, .scenario2, .scenario3 {
+        width: 80%;
+    }
+    .scenarios-page h2 {
+        text-align: center;
+        font-size: 2.5rem;
     }
 }

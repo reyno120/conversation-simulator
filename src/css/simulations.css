@@ -60,8 +60,12 @@
 }
 .dialogue-options {
     text-align: center;
-    margin-top: 58vh;
-    position: relative;
+    /* margin-top: 58vh; */
+    /* position: relative; */
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    transform: translate(-50%);
 }
 .dialogue p {
     width: fit-content;
@@ -74,6 +78,7 @@
     border-radius: 0.25em;
     margin-bottom: 0.5em;
     cursor: pointer;
+    line-height: 1.25em;
 }
 .gray-out {
     background-color: #DCDCDC;
@@ -106,5 +111,51 @@
     }
     100% {
         opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .dialogue-options {
+        top: 76%;
+    }
+    .dialogue h1 {
+        font-size: 1.5rem;
+    }
+    .dialogue p {
+        font-size: 1.25rem;
+    }
+    .friend-depression-video {
+        top: 22%;
+        right: 11%;
+        width: 75%;
+    }
+    .last-dialogue-option p {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .simulation {
+        background-image: url('../images/home-interior-background-mobile.jpg');
+    }
+    .dialogue-options {
+        width: 85%;
+        top: 75%;
+    }
+    .dialogue h1 {
+        font-size: 1.2rem;
+        width: 85%;
+    }
+    .dialogue-options p {
+        font-size: 1rem;
+    }
+    .last-dialogue-option p {
+        font-size: 1rem;
+    }
+    .friend-depression-video {
+        top: 33%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 200%;
     }
 }
