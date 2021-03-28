@@ -130,6 +130,7 @@
     }
     .last-dialogue-option p {
         font-size: 1.25rem;
+        transform: translate(-50%, -120%);
     }
 }
 

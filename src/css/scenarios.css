@@ -101,6 +101,7 @@
     }
     .student-video-eyegaze {
         width: 40%;
+        right: -12%;
     }
     .scenarios {
         margin-top: 7em;
