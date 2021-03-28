@@ -88,15 +88,15 @@ function Homepage(props) {
 
           </div>
 
-          <video autoPlay loop muted ref={facultyVid} className={true ? "faculty-video" : "faculty-video no-display"}>
+          <video autoPlay loop muted ref={facultyVid} className={faculty ? "faculty-video" : "faculty-video no-display"}>
             <source src={video1} type='video/webm' />
           </video>
 
-          <video autoPlay loop muted ref={friendVid} className={true ? "friend-video" : "friend-video no-display"}>
+          <video autoPlay loop muted ref={friendVid} className={friend ? "friend-video" : "friend-video no-display"}>
             <source src={video} type='video/webm' />
           </video>
 
-          <video autoPlay loop muted ref={studentVid} className={true ? "student-video" : "student-video no-display"}>
+          <video autoPlay loop muted ref={studentVid} className={student ? "student-video" : "student-video no-display"}>
             <source src={video2} type='video/webm' />
           </video>
 
