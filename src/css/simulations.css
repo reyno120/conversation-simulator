@@ -124,9 +124,9 @@
         font-size: 1.25rem;
     }
     .friend-depression-video {
-        /* top: 22%; */
-        right: 11%;
-        width: 75%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 60%;
     }
     .last-dialogue-option p {
         font-size: 1.25rem;

@@ -80,7 +80,7 @@
         font-size: 0.875rem;
     }
     .student-video-eyegaze {
-        top: 54%;
+        /* top: 54%; */
         right: -15%;
         width: 45%;
     }
