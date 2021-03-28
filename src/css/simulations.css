@@ -38,7 +38,8 @@
 }
 .friend-depression-video {
     position: absolute;
-    top: 25%;
+    /* top: 25%; */
+    bottom: 3%;
     right: 17%;
     width: 65%;
 }
@@ -63,7 +64,8 @@
     /* margin-top: 58vh; */
     /* position: relative; */
     position: absolute;
-    top: 78%;
+    /* top: 78%; */
+    bottom: 2%;
     left: 50%;
     transform: translate(-50%);
 }
@@ -115,9 +117,6 @@
 }
 
 @media screen and (max-width: 1366px) {
-    .dialogue-options {
-        top: 76%;
-    }
     .dialogue h1 {
         font-size: 1.5rem;
     }
@@ -125,7 +124,7 @@
         font-size: 1.25rem;
     }
     .friend-depression-video {
-        top: 22%;
+        /* top: 22%; */
         right: 11%;
         width: 75%;
     }
@@ -140,7 +139,8 @@
     }
     .dialogue-options {
         width: 85%;
-        top: 75%;
+        /* top: 75%; */
+        bottom: 3%;
     }
     .dialogue h1 {
         font-size: 1.2rem;
@@ -153,7 +153,8 @@
         font-size: 1rem;
     }
     .friend-depression-video {
-        top: 33%;
+        /* top: 33%; */
+        bottom: 4%;
         left: 50%;
         transform: translate(-50%);
         width: 200%;
