@@ -85,6 +85,27 @@
         width: 45%;
     }
 }
+@media screen and (max-width: 1280px) {
+    .scenarios-page h1 {
+        font-size: 2.8rem;
+    }
+    .scenarios-page svg {
+        width: 69%;
+    }
+    .scenarios-page h2 {
+        font-size: 2.6rem;
+    }
+    .scenarios-page p {
+        width: 80%;
+        font-size: 0.8rem;
+    }
+    .student-video-eyegaze {
+        width: 40%;
+    }
+    .scenarios {
+        margin-top: 7em;
+    }
+}
 @media screen and (max-width: 414px) {
     .scenarios-page h1 {
         font-size: 2rem;

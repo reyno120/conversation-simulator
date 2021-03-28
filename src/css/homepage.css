@@ -108,6 +108,23 @@
         font-size: 0.875rem;
     }
 }
+@media screen and (max-width: 1280px) {
+    .homepage h1 {
+        font-size: 3.375rem;
+    }
+    .faculty-video {
+        width: 35%;
+        right: 62%;
+    }
+    .friend-video {
+        width: 35%;
+        right: 32%;
+    }
+    .student-video {
+        width: 35%;
+        right: 4%;
+    }
+}
 
 @media screen and (max-width: 414px) {
     .roles {
