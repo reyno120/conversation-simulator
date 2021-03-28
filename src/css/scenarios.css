@@ -43,7 +43,8 @@
 }
 .student-video-eyegaze {
     position: absolute;
-    top: 54%;
+    /* top: 54%; */
+    bottom: 1%;
     right: -12%;
     width: 40%;
 }

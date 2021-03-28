@@ -48,31 +48,36 @@
 }
 .faculty-video {
     position: absolute;
-    top: 54%;
+    /* top: 54%; */
+    bottom: 1%;
     right: 59%;
     width: 40%;
     animation: slide-up 0.5s;
 }
 .friend-video {
     position: absolute;
-    top: 54%;
+    /* top: 54%; */
+    bottom: 1%;
     right: 29%;
     width: 40%;
     animation: slide-up 0.5s;
 }
 .student-video {
     position: absolute;
-    top: 54%;
+    /* top: 54%; */
+    bottom: 1%;
     right: 0;
     width: 40%;
     animation: slide-up 0.5s;
 }
 @keyframes slide-up {
     0% {
-        top: 70%;
+        /* top: 70%; */
+        bottom: -20%;
     }
     100% {
-        top: 54%;
+        /* top: 54%; */
+        bottom: 1%;
     }
 }
 @media screen and (max-width: 1366px) {
@@ -81,17 +86,17 @@
     }
 
     .faculty-video {
-        top: 59%;
+        /* top: 59%; */
         right: 59.5%;
         animation: slide-up 0.5s
     }
     .friend-video {
-        top: 59%;
+        /* top: 59%; */
         right: 30%;
         animation: slide-up 0.5s
     }
     .student-video {
-        top: 59%;
+        /* top: 59%; */
         right: 1.5%;
         animation: slide-up 0.5s
     }
