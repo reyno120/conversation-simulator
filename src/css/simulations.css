@@ -8,6 +8,9 @@
     overflow: hidden;
     animation: fade-in 3s forwards;
 }
+/* .no-background {
+    background-image: none;
+} */
 .fade-in {
     animation: fade-in 1s forwards;
 }
@@ -82,9 +85,9 @@
     cursor: pointer;
     line-height: 1.25em;
 }
-.gray-out {
+/* .gray-out {
     background-color: #DCDCDC;
-}
+} */
 .white-background {
     background-color: white;
 }
