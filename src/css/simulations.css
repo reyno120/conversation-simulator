@@ -64,6 +64,7 @@
 }
 .dialogue-options {
     text-align: center;
+    width: 60%;
     /* margin-top: 58vh; */
     /* position: relative; */
     position: absolute;
@@ -91,6 +92,10 @@
 .white-background {
     background-color: white;
 }
+.last-dialogue-option {
+    /* max-width: 60%; */
+    width: 60%;
+}
 .last-dialogue-option p {
     width: fit-content;
     padding: 0.5em 1em;
@@ -117,6 +122,25 @@
     100% {
         opacity: 0;
     }
+}
+.popup {
+    background-color: #758FB4;
+    text-align: center;
+}
+.popup p {
+    padding: 1em 0.5em;
+    line-height: 1.25em;
+    color: white;
+    font-family: rubik, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+.click-to-close p {
+    cursor: pointer;
+    width: fit-content;
+    margin: auto;
+    font-size: 1.1rem;
 }
 
 @media screen and (max-width: 1366px) {
@@ -154,7 +178,9 @@
         font-size: 1rem;
     }
     .last-dialogue-option p {
+        text-align: center;
         font-size: 1rem;
+        width: fit-content;
     }
     .friend-depression-video {
         /* top: 33%; */
