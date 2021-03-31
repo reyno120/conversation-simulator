@@ -9,7 +9,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 
 function FriendDepression() {
     const [isLoaded, setisLoaded] = useState(false);
-    const [step, setStep] = useState(8);
+    const [step, setStep] = useState(0);
     const [lastStep, setLastStep] = useState(0);
     const [lastOption, setLastOption] = useState(0);
     const option1 = useRef(null);
@@ -28,6 +28,8 @@ function FriendDepression() {
         eight1: false, eight2: false,
         nine1: false, nine2: false,
         ten1: false, ten2: false,
+        eleven1: false, eleven2: false, eleven3: false,
+        twelve1: false, twelve2: false,
     });
 
 
@@ -659,13 +661,35 @@ function FriendDepression() {
                         "Sleeping medicine will help you sleep, but it's not treating the underlying issue. Talking to
                         a professional might be more useful."
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(10); setLastOption(2);}}>
+                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, nine1: true})); setLastOption(2);}}>
                         "You just need to give it more time, eventually the stress and heartbreak will go away"
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setStep(10); setLastOption(3);}}>
+                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, nine2: true})); setLastOption(3);}}>
                         "Have you heard of<em>SleepNow</em>? I hear it works amazingly!"
                     </p>
                 </div>
+
+                <Dialog open={open.nine1} onClose={() => {setStep(10); setOpen(state => ({...state, nine1: false}));}}>    
+                    <DialogContent className="popup">
+                        <p>
+                            It can be helpful to help him understand that it might take a while for him to get better,
+                            but it's always best to prompt your friends to seek professional help when necessary.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setStep(10); setOpen(state => ({...state, nine1: false}));}}>
+                            <p>[ Click to continue ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+                <Dialog open={open.nine2} onClose={() => {setOpen(state => ({...state, nine2: false}));}}>
+                    <DialogContent className="popup">
+                        <p>
+                            It's best not to recommend medicine to other people since you don't know their medical history.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, nine2: false}));}}>
+                            <p>[ Click to retry ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
             </div>
         );
     }
@@ -680,39 +704,55 @@ function FriendDepression() {
 
                 {lastStep === 8 ? (
                     <div className="last-dialogue-option">
+                        <p>"Have you talked to a professional yet?"</p>
+                    </div>
+                ) : (
+                    <div className="last-dialogue-option">
                         {lastOption === 1 ? (
                             <p>
                                 "Sleeping medicine will help you sleep, but it's not treating the underlying issue. Talking to
                                 a professional might be more useful."
                             </p>
-                        ) : lastOption === 2 ? (
+                        ) : (
                             <p>"You just need to give it more time, eventually the stress and heartbreak will go away"</p>
-                        ) : (
-                            <p>"Have you heard of<em>SleepNow</em>? I hear it works amazingly!"</p>
-                        )}
-                    </div>
-                ) : (
-                    <div className="last-dialogue-option">
-                        {lastOption === 1 ? (
-                            <p>"Have you talked to a professional yet?"</p>
-                        ) : (
-                            <p>"This will also pass."</p>
                         )}
                     </div>
                 )}
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(11); setLastOption(1);}}>
+                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, ten1: true})); setLastOption(1);}}>
                         He is unaware of the resources available to him.
                     </p>
                     <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(11); setLastOption(2);}}>
                         He may think that talking to a professional means that his situation is dire.
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setStep(11); setLastOption(3);}}>
+                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, ten2: true})); setLastOption(3);}}>
                         He does not want to confront his feelings.
                     </p>
                 </div>
+
+                <Dialog open={open.ten1} onClose={() => {setStep(11); setOpen(state => ({...state, ten1: false}));}}>    
+                    <DialogContent className="popup">
+                        <p>
+                            John is aware that resources do exist, but does not have experience using them.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setStep(11); setOpen(state => ({...state, ten1: false}));}}>
+                            <p>[ Click to continue ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+                <Dialog open={open.ten2} onClose={() => {setOpen(state => ({...state, ten2: false}));}}>
+                    <DialogContent className="popup">
+                        <p>
+                            John is clearly unhappy with his current situation. He wants help but is afraid of the social stigma surrounding mental health
+                            and is afraid that talking to a professional might make him feel like something is wrong with him.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, ten2: false}));}}>
+                            <p>[ Click to retry ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
             </div>
         );
     }
@@ -738,16 +778,58 @@ function FriendDepression() {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(12); setLastOption(1);}}>
-                        This stigma surrounding mental health can cause many people to not be aware of the resources available to them.
+                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, eleven3: true})); setLastOption(1);}}>
+                        The stigma surrounding mental health can cause many people to not be aware of the resources available to them.
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(12); setLastOption(2);}}>
+                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, eleven2: true})); setLastOption(2);}}>
                         John does not care about his mental health.
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setStep(12); setLastOption(3);}}>
-                        Mental health resources are not available to John.
+                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, eleven1: true})); setLastOption(3);}}>
+                        John feels hopeless, like he can never recover.
                     </p>
                 </div>
+
+                <Dialog open={open.eleven3} onClose={() => {setStep(12); setOpen(state => ({...state, eleven3: false}));}}>
+                    <DialogContent className="popup">
+                        <p>
+                            <span style={{fontWeight: 'bold', textDecoration: 'underline'}}>Myth:</span> Personality weakness or character flaws cause mental health problems, and if you
+                            try hard enough you can snap out of it.
+                            <br /><br />
+                            <span style={{fontWeight: 'bold', textDecoration: 'underline'}}>Fact:</span> In reality, mental health has nothing to do with being lazy or weak
+                            and can be caused by:
+                            <ul>
+                                <li>Biological factors, such as genes, physical illness, injury, or brain chemistry.</li>
+                                <li>Life experiences, such as trauma or history of abuse.</li>
+                                <li>Family history of mental health problems.</li>
+                            </ul>
+                        </p>
+                        <div className="click-to-close" onClick={() => {setStep(12); setOpen(state => ({...state, eleven3: false}));}}>
+                            <p>[ Click to continue ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+                <Dialog open={open.eleven1} onClose={() => {setStep(12); setOpen(state => ({...state, eleven1: false}));}}>    
+                    <DialogContent className="popup">
+                        <p>
+                            Studies show that people with mental health problems get better and many recover completely. Recovery
+                            refers to the process in which people are able to live, work, learn, and participate fully in their communities.
+                            There are more treatments, services, and community support systems than ever before, and they work!
+                        </p>
+                        <div className="click-to-close" onClick={() => {setStep(12); setOpen(state => ({...state, eleven1: false}));}}>
+                            <p>[ Click to continue ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+                <Dialog open={open.eleven2} onClose={() => {setOpen(state => ({...state, eleven2: false}));}}>
+                    <DialogContent className="popup">
+                        <p>
+                            John is clearly concerned about his mental health and wants to get better.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, eleven2: false}));}}>
+                            <p>[ Click to retry ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
             </div>
         );
     }
@@ -756,32 +838,53 @@ function FriendDepression() {
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
-                    [ You and John discuss some of the mental health stigma  ]
+                    [ You and John discuss some of the myths surrounding mental health. ]
+                    "Oh, I guess it doesn't seem so bad. Maybe I should seek help, but I have no idea where to start!"
                 </h1>
 
 
                 <div className="last-dialogue-option">
                     {lastOption === 1 ? (
-                        <p>He is unaware of the resources available to him.</p>
-                    ) : lastOption === 2 ? (
-                        <p>He may think that talking to a professional means that his situation is dire.</p>
+                        <p>The stigma surrounding mental health can cause many people to not be aware of the resources available to them.</p>
                     ) : (
-                        <p>He does not want to confront his feelings.</p>
+                        <p>John feels hopeless, like he can never recover.</p>
                     )}
                 </div>
 
 
                 <div className="dialogue-options fade-in-longer">
                     <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(12); setLastOption(1);}}>
-                        This stigma surrounding mental health can cause many people to not be aware of the resources available to them.
+                        [ Give him a list of on-campus resources that he can use. ]
                     </p>
                     <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(12); setLastOption(2);}}>
-                        John does not care about his mental health.
+                        [ Invite John to a party that you are going to later today. ]
                     </p>
                     <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setStep(12); setLastOption(3);}}>
-                        Mental health resources are not available to John.
+                        [ Offer to listen to his problems and give advice. ]
                     </p>
                 </div>
+
+                <Dialog open={open.twelve1} onClose={() => {setStep(13); setOpen(state => ({...state, twelve1: false}));}}>    
+                    <DialogContent className="popup">
+                        <p>
+                            John is aware that resources do exist, but does not have experience using them.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setStep(13); setOpen(state => ({...state, twelve1: false}));}}>
+                            <p>[ Click to continue ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+                <Dialog open={open.twelve2} onClose={() => {setOpen(state => ({...state, twelve2: false}));}}>
+                    <DialogContent className="popup">
+                        <p>
+                            John is clearly unhappy with his current situation. He wants help but is afraid of the social stigma surrounding mental health
+                            and is afraid that talking to a professional might make him feel like something is wrong with him.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, twelve2: false}));}}>
+                            <p>[ Click to retry ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
             </div>
         );
     }
