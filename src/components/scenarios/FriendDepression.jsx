@@ -544,7 +544,7 @@ function FriendDepression() {
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
-                    [ John laughts at the meme ] The smile doesn't last long and he is obviously still sad. Why do you think John might still be sad?
+                    [ John laughs at the meme ] The smile doesn't last long and he is obviously still sad. Why do you think John might still be sad?
                 </h1>
 
 
