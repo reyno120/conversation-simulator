@@ -2,14 +2,14 @@ import { useState, useEffect, useRef } from 'react';
 import LoadingScreen from '../LoadingScreen.jsx';
 import FriendScenarios from '../FriendScenarios';
 import '../../css/simulations.css';
-import video from '../../video/test.webm';
+import video from '../../video/scenario1.webm';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 
 
 function FriendDepression() {
     const [isLoaded, setisLoaded] = useState(false);
-    const [step, setStep] = useState(0);
+    const [step, setStep] = useState(6);
     const [lastStep, setLastStep] = useState(0);
     const [lastOption, setLastOption] = useState(0);
     const option1 = useRef(null);
@@ -29,7 +29,10 @@ function FriendDepression() {
         nine1: false, nine2: false,
         ten1: false, ten2: false,
         eleven1: false, eleven2: false, eleven3: false,
-        twelve1: false, twelve2: false,
+        twelve1: false, twelve2: false, twelve3: false,
+        thirteen1: false, thirteen2: false,
+        fourteen: false,
+        fifteen1: false, fifteen2: false,
     });
 
 
@@ -40,9 +43,10 @@ function FriendDepression() {
 
     }, [isLoaded]);
 
+
     function renderVideo(display) {
         return (
-            <video autoPlay muted ref={friendDepressionVid} className="friend-depression-video" style={{display: display}}>
+            <video autoPlay ref={friendDepressionVid} className="friend-depression-video" style={{display: display}}>
                 <source src={video} type='video/webm' />
             </video>
         );
@@ -50,11 +54,17 @@ function FriendDepression() {
 
     function setVideoTime(startTime, endTime) {
         friendDepressionVid.current.currentTime = startTime;
-        friendDepressionVid.current.play();
-        
-        setInterval(function() {
-            if(friendDepressionVid.current.currentTime > endTime) friendDepressionVid.current.pause();
-        }, 1000);
+
+        setTimeout(function(){
+            friendDepressionVid.current.play();
+
+            const interval = setInterval(() => {
+                if(friendDepressionVid.current.currentTime > endTime) {
+                    friendDepressionVid.current.pause();
+                    clearInterval(interval);
+                }
+            }, 500);
+        }, 501);
     }
 
     if(!isLoaded) {
@@ -87,22 +97,22 @@ function FriendDepression() {
             case 1:
                 if(state) {
                     option2.current.style.backgroundColor = '#DCDCDC';
-                    option3.current.style.backgroundColor = '#DCDCDC';
+                    if(option3.current !== null) option3.current.style.backgroundColor = '#DCDCDC';
                 }
                 else {
                     option2.current.style.backgroundColor = 'white';
-                    option3.current.style.backgroundColor = 'white';
+                    if(option3.current !== null) option3.current.style.backgroundColor = 'white';
                 }
                 break;
     
             case 2:
                 if(state) {
                     option1.current.style.backgroundColor = '#DCDCDC';
-                    option3.current.style.backgroundColor = '#DCDCDC';
+                    if(option3.current !== null) option3.current.style.backgroundColor = '#DCDCDC';
                 }
                 else {
                     option1.current.style.backgroundColor = 'white';
-                    option3.current.style.backgroundColor = 'white';
+                    if(option3.current !== null) option3.current.style.backgroundColor = 'white';
                 }
                 break;
     
@@ -162,6 +172,18 @@ function FriendDepression() {
 
             case 12:
                 return step12();
+
+            case 13:
+                return step13();
+
+            case 14:
+                return step14();
+
+            case 15:
+                return step15();
+
+            case 16:
+                return step16();
 
             default:
                 break;
@@ -265,12 +287,6 @@ function FriendDepression() {
 
 
     function step2() {
-        setVideoTime(100, 120);
-        // if(parentDiv.current !== null) {
-        //     console.log(parentDiv.current);
-        //     parentDiv.current.style.backgroundImage = 'none';
-        // }
-
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -324,7 +340,7 @@ function FriendDepression() {
     }
 
     function step3() {
-        setVideoTime(80, 100);
+        setVideoTime(3, 6.5);
 
         return (
             <div className="dialogue" key={step}>
@@ -371,6 +387,8 @@ function FriendDepression() {
     }
 
     function step4() {
+        setVideoTime(11, 16);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -433,6 +451,8 @@ function FriendDepression() {
     }
 
     function step5() {
+        setVideoTime(19.5, 25);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -541,6 +561,8 @@ function FriendDepression() {
     }
 
     function step7() {
+        setVideoTime(28, 31);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -797,12 +819,12 @@ function FriendDepression() {
                             <br /><br />
                             <span style={{fontWeight: 'bold', textDecoration: 'underline'}}>Fact:</span> In reality, mental health has nothing to do with being lazy or weak
                             and can be caused by:
-                            <ul>
-                                <li>Biological factors, such as genes, physical illness, injury, or brain chemistry.</li>
-                                <li>Life experiences, such as trauma or history of abuse.</li>
-                                <li>Family history of mental health problems.</li>
-                            </ul>
                         </p>
+                        <ul>
+                            <li>Biological factors, such as genes, physical illness, injury, or brain chemistry.</li>
+                            <li>Life experiences, such as trauma or history of abuse.</li>
+                            <li>Family history of mental health problems.</li>
+                        </ul>
                         <div className="click-to-close" onClick={() => {setStep(12); setOpen(state => ({...state, eleven3: false}));}}>
                             <p>[ Click to continue ]</p>
                         </div>
@@ -853,38 +875,212 @@ function FriendDepression() {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(12); setLastOption(1);}}>
+                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, twelve3: true})); setLastOption(1);}}>
                         [ Give him a list of on-campus resources that he can use. ]
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(12); setLastOption(2);}}>
+                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, twelve2: true})); setLastOption(2);}}>
                         [ Invite John to a party that you are going to later today. ]
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setStep(12); setLastOption(3);}}>
+                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, twelve1: true})); setLastOption(3);}}>
                         [ Offer to listen to his problems and give advice. ]
                     </p>
                 </div>
 
-                <Dialog open={open.twelve1} onClose={() => {setStep(13); setOpen(state => ({...state, twelve1: false}));}}>    
+                <Dialog open={open.twelve3} onClose={() => {setStep(13); setOpen(state => ({...state, twelve1: false}));}}>    
                     <DialogContent className="popup">
                         <p>
-                            John is aware that resources do exist, but does not have experience using them.
+                            Here is a list of on campus resources John could use. Click on them to get more information!
                         </p>
+                        <ul>
+                            <li><a href="https://www.purdue.edu/caps/" target="_blank" rel="noopener noreferrer">Counseling and Psychological Services (CAPS)</a></li>
+                            <li><a href="https://www.purdue.edu/odos/" target="_blank" rel="noopener noreferrer">Office of the Dean of Students (ODOS)</a></li>
+                            <li><a href="https://www.purdue.edu/odos/care/" target="_blank" rel="noopener noreferrer">Center for Advocacy, Response, and Education (CARE)</a></li>
+                            <li>Faculty and Advisors</li>
+                            <li><a href="https://www.purdue.edu/recwell/fitness-wellness/wellness/mindfulness.php" target="_blank" rel="noopener noreferrer">CoRec Mindfulness Room</a></li>
+                        </ul>
                         <div className="click-to-close" onClick={() => {setStep(13); setOpen(state => ({...state, twelve1: false}));}}>
                             <p>[ Click to continue ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+                <Dialog open={open.twelve1} onClose={() => {setOpen(state => ({...state, twelve1: false}));}}>    
+                    <DialogContent className="popup">
+                        <p>
+                            You aren't his therapist! This could leave you on the hook for all this troubles, and delay him seeking treatment.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, twelve1: false}));}}>
+                            <p>[ Click to retry ]</p>
                         </div>
                     </DialogContent>
                 </Dialog>
                 <Dialog open={open.twelve2} onClose={() => {setOpen(state => ({...state, twelve2: false}));}}>
                     <DialogContent className="popup">
                         <p>
-                            John is clearly unhappy with his current situation. He wants help but is afraid of the social stigma surrounding mental health
-                            and is afraid that talking to a professional might make him feel like something is wrong with him.
+                            This promotes unhealthy coping via substance use, and could put John in danger.
                         </p>
                         <div className="click-to-close" onClick={() => {setOpen(state => ({...state, twelve2: false}));}}>
                             <p>[ Click to retry ]</p>
                         </div>
                     </DialogContent>
                 </Dialog>
+            </div>
+        );
+    }
+
+    function step13() {
+        return (
+            <div className="dialogue" key={step}>
+                <h1 className="fade-in">
+                    Based on what John has told you, which of those campus resources do you think would best benefit him?
+                </h1>
+
+
+                <div className="last-dialogue-option">
+                    <p>[ Give him a list of on-campus resources that he can use. ]</p>
+                </div>
+
+
+                <div className="dialogue-options fade-in-longer">
+                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(15); setLastOption(1);}}>
+                        Counseling and Psychological Services (CAPS)
+                    </p>
+                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, thirteen2: true})); setLastOption(2);}}>
+                        His advisor
+                    </p>
+                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, thirteen1: true})); setLastOption(3);}}>
+                        CoRec Mindfulness Room
+                    </p>
+                </div>
+
+                <Dialog open={open.thirteen1} onClose={() => {setStep(14); setOpen(state => ({...state, thirteen1: false}));}}>    
+                    <DialogContent className="popup">
+                        <p>
+                            This is a good tool to use for momentary peace, but this will not promote him to seek treatment.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setStep(14); setOpen(state => ({...state, thirteen1: false}));}}>
+                            <p>[ Click to continue ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+                <Dialog open={open.thirteen2} onClose={() => {setOpen(state => ({...state, thirteen2: false}));}}>
+                    <DialogContent className="popup">
+                        <p>
+                            While talking to your advisor can be helpful, John will most likely be pointed towards CAPS or ODOS.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, thirteen2: false}));}}>
+                            <p>[ Click to retry ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+            </div>
+        );
+    }
+
+    function step14() {
+        return (
+            <div className="dialogue" key={step}>
+                <h1 className="fade-in">
+                    "I'm not familiar with the&nbsp; 
+                    <a href="https://www.purdue.edu/recwell/fitness-wellness/wellness/mindfulness.php" target="_blank" rel="noopener noreferrer">CoRec Mindfulness Room</a>
+                    , but is sounds like it would be a short-term solution, like going for a walk. Is there a more useful resource you can recommend?"
+                </h1>
+
+
+                <div className="last-dialogue-option">
+                    <p>CoRec Mindfulness Room</p>
+                </div>
+
+
+                <div className="dialogue-options fade-in-longer">
+                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(15); setLastOption(1);}}>
+                        Counseling and Psychological Services (CAPS)
+                    </p>
+                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, fourteen: true})); setLastOption(2);}}>
+                        His advisor
+                    </p>
+                </div>
+
+                <Dialog open={open.fourteen} onClose={() => {setOpen(state => ({...state, fourteen: false}));}}>    
+                    <DialogContent className="popup">
+                        <p>
+                            John's advisor will likely point him to CAPS. It's best to use a more direct resource.
+                        </p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, fourteen: false}));}}>
+                            <p>[ Click to retry ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+            </div>
+        );
+    }
+
+    function step15() {
+        return (
+            <div className="dialogue" key={step}>
+                <h1 className="fade-in">
+                    "I'm not familiar with&nbsp; 
+                    <a href="https://www.purdue.edu/caps/" target="_blank" rel="noopener noreferrer">CAPS</a>
+                    . I've heard of it, but don't really know much about it."
+                </h1>
+
+
+                <div className="last-dialogue-option">
+                    <p>Counseling and Psychological Services (CAPS)</p>
+                </div>
+
+
+                <div className="dialogue-options fade-in-longer">
+                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(16); setLastOption(1);}}>
+                        "CAPS provides psychological services for students at Purdue. You can do private or group sessions!"
+                    </p>
+                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, fifteen2: true})); setLastOption(2);}}>
+                        "CAPS provides nutrition counseling for students who want to learn how to meal prep on a budget.""
+                    </p>
+                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, fifteen1: true})); setLastOption(3);}}>
+                        "I'm not really sure what CAPS does either!"
+                    </p>
+                </div>
+
+                <Dialog open={open.fifteen1} onClose={() => {setOpen(state => ({...state, fifteen1: false}));}}>    
+                    <DialogContent className="popup">
+                        <p>
+                            CAPS provides psychological services for students at Purdue. <br />
+                            <a href="https://www.purdue.edu/caps/" target="_blank" rel="noopener noreferrer">Click here</a> 
+                            &nbsp;to learn more!
+                        </p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, fifteen1: false}));}}>
+                            <p>[ Click to retry ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+                <Dialog open={open.fifteen2} onClose={() => {setOpen(state => ({...state, fifteen2: false}));}}>    
+                    <DialogContent className="popup">
+                        <p>
+                            Incorrect! CAPS provides psychological services for students at Purdue. <br />
+                            <a href="https://www.purdue.edu/caps/" target="_blank" rel="noopener noreferrer">Click here</a> 
+                            &nbsp;to learn more!
+                        </p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, fifteen2: false}));}}>
+                            <p>[ Click to retry ]</p>
+                        </div>
+                    </DialogContent>
+                </Dialog>
+            </div>
+        );
+    }
+
+    function step16() {
+        return (
+            <div className="dialogue" key={step}>
+                <h1 className="fade-in">
+                    "I will definitely be reaching out to them soon. Thanks so much for your help! <br/> Bye!"
+                </h1>
+
+
+                <div className="last-dialogue-option">
+                    <p>"CAPS provides psychological services for students at Purdue. You can do private or group sessions!"</p>
+                </div>
+
             </div>
         );
     }
