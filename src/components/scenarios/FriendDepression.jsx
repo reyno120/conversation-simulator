@@ -82,7 +82,7 @@ function FriendDepression() {
     return (
         <div style={{width: '100%', height: '100vh', overflow: 'hidden'}}>
             <LoadingScreen fade={'fade-out'} animation={''} />
-            <div className='simulation' onClick={() => friendDepressionVid.current.pause()}>
+            <div className={step > 1 ? 'simulation background-scenario1' : 'simulation'} onClick={() => friendDepressionVid.current.pause()}>
                 {step > 0 ? renderVideo() : renderVideo('none')}
                 {renderDialogue()}
 
@@ -123,6 +123,47 @@ function FriendDepression() {
                 else {
                     option1.current.style.backgroundColor = 'white';
                     option2.current.style.backgroundColor = 'white';
+                }
+                break;
+    
+            default:
+                break;
+        }
+      }
+
+      // for first couple of steps when option backgrounds are white
+      function setOptionAlt(option, state) {
+        switch(option) {
+            case 1:
+                if(state) {
+                    option2.current.style.backgroundColor = '#A2A2A2';
+                    if(option3.current !== null) option3.current.style.backgroundColor = '#A2A2A2';
+                }
+                else {
+                    option2.current.style.backgroundColor = '#758FB4';
+                    if(option3.current !== null) option3.current.style.backgroundColor = '#758FB4';
+                }
+                break;
+    
+            case 2:
+                if(state) {
+                    option1.current.style.backgroundColor = '#A2A2A2';
+                    if(option3.current !== null) option3.current.style.backgroundColor = '#A2A2A2';
+                }
+                else {
+                    option1.current.style.backgroundColor = '#758FB4';
+                    if(option3.current !== null) option3.current.style.backgroundColor = '#758FB4';
+                }
+                break;
+    
+            case 3:
+                if(state) {
+                    option1.current.style.backgroundColor = '#A2A2A2';
+                    option2.current.style.backgroundColor = '#A2A2A2';
+                }
+                else {
+                    option1.current.style.backgroundColor = '#758FB4';
+                    option2.current.style.backgroundColor = '#758FB4';
                 }
                 break;
     
@@ -208,13 +249,13 @@ function FriendDepression() {
                 </h1>
 
                 <div className="dialogue-options">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, zero2: true})); setLastOption(1);}}>
+                    <p className='blue-background' ref={option1} onMouseEnter={() => setOptionAlt(1, true)} onMouseLeave={() => setOptionAlt(1, false)} onClick={() => {setOpen(state => ({...state, zero2: true})); setLastOption(1);}}>
                         [ Send him a text ]
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(1); setLastOption(2);}}>
+                    <p className='blue-background' ref={option2} onMouseEnter={() => setOptionAlt(2, true)} onMouseLeave={() => setOptionAlt(2, false)} onClick={() => {setStep(1); setLastOption(2);}}>
                         [ Meet him in person ]
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, zero1: true})); setLastOption(3);}}>
+                    <p className='blue-background' ref={option3} onMouseEnter={() => setOptionAlt(3, true)} onMouseLeave={() => setOptionAlt(3, false)} onClick={() => {setOpen(state => ({...state, zero1: true})); setLastOption(3);}}>
                         [ Facetime him ]
                     </p>
                 </div>
@@ -258,13 +299,13 @@ function FriendDepression() {
                 </div>
 
                 <div className="dialogue-options fade-in-longer" key={step}>
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(2); setLastOption(1);}}>
+                    <p className='blue-background' ref={option1} onMouseEnter={() => setOptionAlt(1, true)} onMouseLeave={() => setOptionAlt(1, false)} onClick={() => {setStep(2); setLastOption(1);}}>
                         John's house
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, one2: true})); setLastOption(2);}}>
+                    <p className='blue-background' ref={option2} onMouseEnter={() => setOptionAlt(2, true)} onMouseLeave={() => setOptionAlt(2, false)} onClick={() => {setOpen(state => ({...state, one2: true})); setLastOption(2);}}>
                         The local Chipotle
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, one1: true})); setLastOption(3);}}>
+                    <p className='blue-background' ref={option3} onMouseEnter={() => setOptionAlt(3, true)} onMouseLeave={() => setOptionAlt(3, false)} onClick={() => {setOpen(state => ({...state, one1: true})); setLastOption(3);}}>
                         The local park
                     </p>
                 </div>

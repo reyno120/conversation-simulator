@@ -12,7 +12,7 @@
     background-image: url('../images/home-interior-background.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    animation: fade-in 2s forwards;
+    /* animation: fade-in 4s forwards; */
 }
 .fade-in {
     animation: fade-in 1s forwards;
@@ -101,6 +101,10 @@
 } */
 .white-background {
     background-color: white;
+}
+.blue-background {
+    background-color: #758FB4;
+    color: white;
 }
 .last-dialogue-option {
     /* max-width: 60%; */
