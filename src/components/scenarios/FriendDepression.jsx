@@ -9,7 +9,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 
 function FriendDepression() {
     const [isLoaded, setisLoaded] = useState(false);
-    const [step, setStep] = useState(6);
+    const [step, setStep] = useState(0);
     const [lastStep, setLastStep] = useState(0);
     const [lastOption, setLastOption] = useState(0);
     const option1 = useRef(null);
@@ -46,7 +46,7 @@ function FriendDepression() {
 
     function renderVideo(display) {
         return (
-            <video autoPlay ref={friendDepressionVid} className="friend-depression-video" style={{display: display}}>
+            <video autoPlay ref={friendDepressionVid} className="friend-depression-video fade-in" style={{display: display}}>
                 <source src={video} type='video/webm' />
             </video>
         );
@@ -83,7 +83,6 @@ function FriendDepression() {
         <div style={{width: '100%', height: '100vh', overflow: 'hidden'}}>
             <LoadingScreen fade={'fade-out'} animation={''} />
             <div className='simulation' onClick={() => friendDepressionVid.current.pause()}>
-
                 {step > 0 ? renderVideo() : renderVideo('none')}
                 {renderDialogue()}
 
@@ -199,6 +198,8 @@ function FriendDepression() {
     // evens are main, odds are alternate
 
     function step0() {
+        setVideoTime(0, 0);
+
         return (
             <div className="dialogue" key={step}>
                 <h1>
@@ -238,6 +239,8 @@ function FriendDepression() {
     }
 
     function step1() {
+        setVideoTime(7.5, 8);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -609,6 +612,8 @@ function FriendDepression() {
     }
 
     function step8() {
+        setVideoTime(33, 38);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -666,6 +671,8 @@ function FriendDepression() {
     }
 
     function step9() {  
+        setVideoTime(40, 49);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -717,6 +724,8 @@ function FriendDepression() {
     }
 
     function step10() {
+        setVideoTime(50, 54.60);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -780,6 +789,8 @@ function FriendDepression() {
     }
 
     function step11() {
+        setVideoTime(58, 65);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -857,6 +868,8 @@ function FriendDepression() {
     }
 
     function step12() {
+        setVideoTime(66, 73);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -977,6 +990,8 @@ function FriendDepression() {
     }
 
     function step14() {
+        setVideoTime(76, 86);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -1015,6 +1030,8 @@ function FriendDepression() {
     }
 
     function step15() {
+        setVideoTime(88, 93);
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
