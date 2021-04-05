@@ -71,7 +71,7 @@ function Homepage(props) {
 
           <div className="roles">
 
-              <div className={friend || student ? "role-faculty faded" : "role-faculty"} onMouseEnter={() => setSelector('faculty', true)} onMouseLeave={() => setSelector('faculty', false)} onClick={() => props.selectRole('faculty')}>
+              <div className={friend || student ? "role-faculty faded" : "role-faculty"} onMouseEnter={() => setSelector('faculty', true)} onMouseLeave={() => setSelector('faculty', false)} onClick={() => {/*props.selectRole('faculty')*/}}>
                 <h2>Faculty</h2>
                 <p>member who notices a student is struggling</p>
               </div>
@@ -81,7 +81,7 @@ function Homepage(props) {
                 <p>of someone who is struggling</p>
               </div>
 
-              <div className={faculty || friend ? "role-student faded" : "role-student"} onMouseEnter={() => setSelector('student', true)} onMouseLeave={() => setSelector('student', false)} onClick={() => props.selectRole('student')}>
+              <div className={faculty || friend ? "role-student faded" : "role-student"} onMouseEnter={() => setSelector('student', true)} onMouseLeave={() => setSelector('student', false)} onClick={() => {/*props.selectRole('student')*/}}>
                 <h2>Student</h2>
                 <p>who is struggling with their mental health</p>
               </div>

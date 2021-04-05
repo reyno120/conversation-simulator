@@ -290,11 +290,11 @@ function FriendDepression() {
 
                 <div className="last-dialogue-option">
                     {lastOption === 1 ? (
-                        <p>[ Send him a text ]</p>
+                        <p style={{backgroundColor: '#758FB4', color: 'white'}}>[ Send him a text ]</p>
                     ) : lastOption === 2 ? (
-                        <p>[ Meet him in person ]</p>
+                        <p style={{backgroundColor: '#758FB4', color: 'white'}}>[ Meet him in person ]</p>
                     ) : (
-                        <p>[ Facetime him ]</p>
+                        <p style={{backgroundColor: '#758FB4', color: 'white'}}>[ Facetime him ]</p>
                     )}
                 </div>
 
@@ -309,11 +309,11 @@ function FriendDepression() {
                         The local park
                     </p>
                 </div>
-                <Dialog open={open.one1} onClose={() => {setStep(2); setOpen(state => ({...state, one1: false}));}}>    
+                <Dialog open={open.one1} onClose={() => {setOpen(state => ({...state, one1: false}));}}>    
                     <DialogContent className="popup">
                         <p>While this can be a peaceful environment, some may not feel like they can speak openly in public.</p>
-                        <div className="click-to-close" onClick={() => {setStep(2); setOpen(state => ({...state, one1: false}));}}>
-                            <p>[ Click to continue ]</p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, one1: false}));}}>
+                            <p>[ Click to retry ]</p>
                         </div>
                     </DialogContent>
                 </Dialog>
@@ -384,7 +384,7 @@ function FriendDepression() {
     }
 
     function step3() {
-        setVideoTime(3, 6.5);
+        if(!open.three1 && !open.three2) setVideoTime(3, 6.5);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
@@ -431,7 +431,7 @@ function FriendDepression() {
     }
 
     function step4() {
-        setVideoTime(11, 16);
+        if(!open.four1 && !open.four2) setVideoTime(11, 16);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
@@ -495,7 +495,7 @@ function FriendDepression() {
     }
 
     function step5() {
-        setVideoTime(19.5, 25);
+        if(!open.five1 && !open.five2) setVideoTime(19.5, 25);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
@@ -605,7 +605,7 @@ function FriendDepression() {
     }
 
     function step7() {
-        setVideoTime(28, 31);
+        if(!open.seven1 && !open.seven2) setVideoTime(28, 31);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
@@ -653,7 +653,7 @@ function FriendDepression() {
     }
 
     function step8() {
-        setVideoTime(33, 38);
+        if(!open.eight1 && !open.eight2) setVideoTime(33, 38);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
@@ -712,7 +712,7 @@ function FriendDepression() {
     }
 
     function step9() {  
-        setVideoTime(40, 49);
+        if(!open.nine1 && !open.nine2) setVideoTime(40, 49);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
@@ -765,7 +765,7 @@ function FriendDepression() {
     }
 
     function step10() {
-        setVideoTime(50, 54.60);
+        if(!open.ten1 && !open.ten2) setVideoTime(50, 54.60);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
@@ -830,7 +830,7 @@ function FriendDepression() {
     }
 
     function step11() {
-        setVideoTime(58, 65);
+        if(!open.eleven1 && !open.eleven2) setVideoTime(58, 65);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
@@ -909,7 +909,7 @@ function FriendDepression() {
     }
 
     function step12() {
-        setVideoTime(66, 73);
+        if(!open.twelve1 && !open.twelve2) setVideoTime(66, 73);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
@@ -1031,7 +1031,7 @@ function FriendDepression() {
     }
 
     function step14() {
-        setVideoTime(76, 86);
+        if(!open.fourteen1 && !open.fourteen2) setVideoTime(76, 86);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
@@ -1071,7 +1071,7 @@ function FriendDepression() {
     }
 
     function step15() {
-        setVideoTime(88, 93);
+        if(!open.fifteen1 && !open.fifteen2) setVideoTime(88, 93);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>

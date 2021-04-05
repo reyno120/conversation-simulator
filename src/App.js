@@ -45,7 +45,7 @@ function App() {
     return (
       <div className="App">
         <Homepage translate={translateHome} selectRole={selectRole} />
-        <FacultyScenarios display={displayFacultyScenarios} />
+        <FacultyScenarios display={displayFacultyScenarios} selectScenario={selectScenario} animation={'slide-up-page'} videoAnimation={'video-animation'}/>
         <FriendScenarios display={displayFriendScenarios} selectScenario={selectScenario} animation={'slide-up-page'} videoAnimation={'video-animation'} />
       </div>
     );
