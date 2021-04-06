@@ -12,6 +12,8 @@ function App() {
   const [role, setRole] = useState('');
   const [displayFacultyScenarios, setDisplayFacultyScenarios] = useState('none');
   const [displayFriendScenarios, setDisplayFriendScenarios] = useState('none');
+  const [displayStudentScenarios, setDisplayStudentScenarios] = useState('none');
+  const [translateRole, setTranslateRole] = useState('');
   const [scenario, setScenario] = useState(false);
 
   function selectRole(role) {
@@ -20,14 +22,36 @@ function App() {
 
     switch(role) {
       case 'faculty':
+        setTranslateRole('');
         setDisplayFacultyScenarios('');
+
+        setDisplayFriendScenarios('none');
+        setDisplayStudentScenarios('none');
         break;
 
       case 'friend':
+        setTranslateRole('');
         setDisplayFriendScenarios('');
+
+        setDisplayFacultyScenarios('none');
+        setDisplayStudentScenarios('none')
+        break;
+
+      case 'student':
+        setTranslateRole('');
+        setDisplayStudentScenarios('');
+
+        setDisplayFacultyScenarios('none');
+        setDisplayFriendScenarios('none');
         break;
 
       default:
+        setRole('');
+        setTranslateHome("slide-down-page");
+        setTranslateRole("slide-down-page");
+        // setDisplayFacultyScenarios('none');
+        // setDisplayFriendScenarios('none');
+        // setDisplayStudentScenarios('none');
         break;
     }
   }
@@ -45,8 +69,8 @@ function App() {
     return (
       <div className="App">
         <Homepage translate={translateHome} selectRole={selectRole} />
-        <FacultyScenarios display={displayFacultyScenarios} selectScenario={selectScenario} animation={'slide-up-page'} videoAnimation={'video-animation'}/>
-        <FriendScenarios display={displayFriendScenarios} selectScenario={selectScenario} animation={'slide-up-page'} videoAnimation={'video-animation'} />
+        <FacultyScenarios display={displayFacultyScenarios} selectRole={selectRole} selectScenario={selectScenario} animation={'slide-up-page'} videoAnimation={'video-animation'}/>
+        <FriendScenarios display={displayFriendScenarios} selectRole={selectRole} selectScenario={selectScenario} animation={translateRole} />
       </div>
     );
   }

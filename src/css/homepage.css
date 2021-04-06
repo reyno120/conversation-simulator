@@ -173,3 +173,15 @@
       transform: translateY(-100%);
     }
   }
+
+  .slide-down-page {
+    animation: slide-down-page 1s forwards;
+  }
+  @keyframes slide-down-page {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }

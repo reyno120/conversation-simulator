@@ -47,6 +47,13 @@
     right: -12%;
     width: 40%;
 }
+.back-arrow {
+    width: 6%;
+    position: absolute;
+    bottom: 3%;
+    left: 2%;
+    cursor: pointer;
+}
 .video-animation {
     animation: slide-left-in 1.5s ease;
 }
