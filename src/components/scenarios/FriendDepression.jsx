@@ -23,7 +23,7 @@ function FriendDepression() {
         three1: false, three2: false, 
         four1: false, four2: false, 
         five1: false, five2: false, 
-        six1: false, six2: false,
+        six: false,
         seven1: false, seven2: false,
         eight1: false, eight2: false,
         nine1: false, nine2: false,
@@ -259,7 +259,7 @@ function FriendDepression() {
                         [ Facetime him ]
                     </p>
                 </div>
-                <Dialog open={open.zero1} onClose={() => {setStep(1); setOpen(state => ({...state, zero1: false}));}}>    
+                <Dialog open={open.zero1} disableBackdropClick onClose={() => {setStep(1); setOpen(state => ({...state, zero1: false}));}}>    
                     <DialogContent className="popup">
                         <p>While during COVID this is the preferred solution, face to face communication promotes openness.</p>
                         <div className="click-to-close"  onClick={() => {setStep(1); setOpen(state => ({...state, zero1: false}));}}>
@@ -267,7 +267,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.zero2} onClose={() => {setOpen(state => ({...state, zero2: false}));}}>
+                <Dialog open={open.zero2} disableBackdropClick onClose={() => {setOpen(state => ({...state, zero2: false}));}}>
                     <DialogContent className="popup">
                         <p>A topic this sensitive should be discussed face to face.</p>
                         <div className="click-to-close"  onClick={() => {setOpen(state => ({...state, zero2: false}));}}>
@@ -309,7 +309,7 @@ function FriendDepression() {
                         The local park
                     </p>
                 </div>
-                <Dialog open={open.one1} onClose={() => {setOpen(state => ({...state, one1: false}));}}>    
+                <Dialog open={open.one1} disableBackdropClick onClose={() => {setOpen(state => ({...state, one1: false}));}}>    
                     <DialogContent className="popup">
                         <p>While this can be a peaceful environment, some may not feel like they can speak openly in public.</p>
                         <div className="click-to-close" onClick={() => {setOpen(state => ({...state, one1: false}));}}>
@@ -317,7 +317,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.one2} onClose={() => {setOpen(state => ({...state, one2: false}));}}>
+                <Dialog open={open.one2} disableBackdropClick onClose={() => {setOpen(state => ({...state, one2: false}));}}>
                     <DialogContent className="popup">
                         <p>Research shows that a calm and controlled environment is beneficial to open communication.</p>
                         <div className="click-to-close" onClick={() => {setOpen(state => ({...state, one2: false}));}}>
@@ -334,9 +334,10 @@ function FriendDepression() {
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
-                    You and John are having a conversation at his house. John mentions that he just went 
-                    through a breakup and that his classes are difficult. What is your response to his 
-                    initial statement?
+                    [ You and John are having a conversation at his house. ] 
+                    "I’m feeling really stressed out and sad right now. My classes are just really difficult 
+                    this semester and to add to all of that, my girlfriend just broke up with me!"
+                    What is your response?
                 </h1>
 
                 <div className="last-dialogue-option">
@@ -354,13 +355,13 @@ function FriendDepression() {
                         "There's plenty of fish in the sea."
                     </p>
                     <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(4); setLastOption(2);}}>
-                        "I'm sorry to hear that."
+                        "Why don't you tell me about it?"
                     </p>
                     <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, two1: true})); setLastStep(2); setLastOption(3);}}>
                         "Breakups are tough."
                     </p>
                 </div>
-                <Dialog open={open.two1} onClose={() => {setStep(3); setOpen(state => ({...state, two1: false}));}}>    
+                <Dialog open={open.two1} disableBackdropClick onClose={() => {setStep(3); setOpen(state => ({...state, two1: false}));}}>    
                     <DialogContent className="popup">
                         <p>Acknowledging the difficulty of the situation is good, but turning the focus towards John will help him open up further.</p>
                         <div className="click-to-close" onClick={() => {setStep(3); setOpen(state => ({...state, two1: false}));}}>
@@ -368,7 +369,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.two2} onClose={() => {setOpen(state => ({...state, two2: false}));}}>
+                <Dialog open={open.two2} disableBackdropClick onClose={() => {setOpen(state => ({...state, two2: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             Turning the focus away from John and ignoring his feelings is not the right thing to do in this situation.
@@ -407,7 +408,7 @@ function FriendDepression() {
                         "It's okay to be sad, but eventually, you're going to have to move on."
                     </p>
                 </div>
-                <Dialog open={open.three1} onClose={() => {setStep(4); setOpen(state => ({...state, three1: false}));}}>    
+                <Dialog open={open.three1} disableBackdropClick onClose={() => {setStep(4); setOpen(state => ({...state, three1: false}));}}>    
                     <DialogContent className="popup">
                         <p>John may need more time to process what he's going through! Realism ignores feelings about this situation.</p>
                         <div className="click-to-close" onClick={() => {setStep(4); setOpen(state => ({...state, three1: false}));}}>
@@ -415,7 +416,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.three2} onClose={() => {setOpen(state => ({...state, three2: false}));}}>
+                <Dialog open={open.three2} disableBackdropClick onClose={() => {setOpen(state => ({...state, three2: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             Turning the focus away from John and ignoring his feelings is not the right thing to do in this situation.
@@ -454,7 +455,7 @@ function FriendDepression() {
                         {lastOption === 1 ? (
                             <p>"There's plenty of fish in the sea."</p>
                         ) : (
-                            <p>"I'm sorry to hear that."</p>
+                            <p>"Why don't you tell me about it?"</p>
                         )}
                     </div>
                 )}
@@ -472,15 +473,15 @@ function FriendDepression() {
                     </p>
                 </div>
 
-                <Dialog open={open.four1} onClose={() => {setStep(5); setOpen(state => ({...state, four1: false}));}}>    
+                <Dialog open={open.four1} disableBackdropClick onClose={() => {setStep(5); setOpen(state => ({...state, four1: false}));}}>    
                     <DialogContent className="popup">
-                        <p>Promoting healthy coping skills such as hobbies is god, but if John is suffering he may not be able to maintain his normal habits.</p>
+                        <p>Promoting healthy coping skills such as hobbies is good, but if John is suffering he may not be able to maintain his normal habits.</p>
                         <div className="click-to-close" onClick={() => {setStep(5); setOpen(state => ({...state, four1: false}));}}>
                             <p>[ Click to continue ]</p>
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.four2} onClose={() => {setOpen(state => ({...state, four2: false}));}}>
+                <Dialog open={open.four2} disableBackdropClick onClose={() => {setOpen(state => ({...state, four2: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             While empathizing may be beneficial, focusing on John will help him the most right now. Sometimes the future seems too far off.
@@ -520,7 +521,7 @@ function FriendDepression() {
                         "What were some of the things that used to make you happy?"
                     </p>
                 </div>
-                <Dialog open={open.five1} onClose={() => {setStep(6); setOpen(state => ({...state, five1: false}));}}>    
+                <Dialog open={open.five1} disableBackdropClick onClose={() => {setStep(6); setOpen(state => ({...state, five1: false}));}}>    
                     <DialogContent className="popup">
                         <p>This shows you are invested in John, but you should be more direct.</p>
                         <div className="click-to-close" onClick={() => {setStep(6); setOpen(state => ({...state, five1: false}));}}>
@@ -528,7 +529,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.five2} onClose={() => {setOpen(state => ({...state, five2: false}));}}>
+                <Dialog open={open.five2} disableBackdropClick onClose={() => {setOpen(state => ({...state, five2: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             This is incorrect, there are lots of resources John can utilize to help him overcome his current depression.
@@ -546,7 +547,8 @@ function FriendDepression() {
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
-                    ....................................
+                    "I don't know, everything seems so pointless..." There is now a quiet moment in your conversation. It feels like neither one of you has anything to say.
+                    What should your next step be?
                 </h1>
 
 
@@ -572,30 +574,19 @@ function FriendDepression() {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, six2: true})); setLastOption(1);}}>
+                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, six: true})); setLastOption(1);}}>
                         [ Change the topic ]
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(8); setLastOption(2);}}>
-                        [ Prompt John for more details about his situation ]
-                    </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, six1: true})); setLastStep(6); setLastOption(3);}}>
-                        [ Show him a funny meme ]
+                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(7); setLastOption(2);}}>
+                        "Have you had any thoughts of harming yourself or others?"
                     </p>
                 </div>
-                <Dialog open={open.six1} onClose={() => {setStep(7); setOpen(state => ({...state, six1: false}));}}>    
-                    <DialogContent className="popup">
-                        <p>While this may give John a good laugh, it may cause him to thing you no longer care or don't take him seriously.</p>
-                        <div className="click-to-close" onClick={() => {setStep(7); setOpen(state => ({...state, six1: false}));}}>
-                            <p>[ Click to continue ]</p>
-                        </div>
-                    </DialogContent>
-                </Dialog>
-                <Dialog open={open.six2} onClose={() => {setOpen(state => ({...state, six2: false}));}}>
+                <Dialog open={open.six} disableBackdropClick onClose={() => {setOpen(state => ({...state, six: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             John is probably thinking or processing how he feels, try keeping the conversation on him!
                         </p>
-                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, six2: false}));}}>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, six: false}));}}>
                             <p>[ Click to retry ]</p>
                         </div>
                     </DialogContent>
@@ -605,43 +596,43 @@ function FriendDepression() {
     }
 
     function step7() {
-        if(!open.seven1 && !open.seven2) setVideoTime(28, 31);    // only plays video when dialog is not open
+        // if(!open.seven1 && !open.seven2) setVideoTime(28, 31);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
-                    [ John laughs at the meme ] The smile doesn't last long and he is obviously still sad. Why do you think John might still be sad?
+                    "I mean who hasn't thought of it?"
                 </h1>
 
 
                 <div className="last-dialogue-option">
-                    <p>[ Show him a funny meme ]</p>
+                    <p>"Have you had any thoughts of harming yourself or others?"</p>
                 </div>
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(8); setLastOption(1);}}>
-                        The stess of school and his breakup are too much.
+                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, seven1: true})); setLastOption(1);}}>
+                        "Man you're right on that, sometimes I get really frustrated too. I can always sweat it out at the gym though, want to come with me later?"
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, seven1: true})); setLastOption(2);}}>
-                        He's just always sad.
+                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, seven2: true})); setLastOption(2);}}>
+                        "Dude that's no good, did you get a concussion or something? Cause that's some crazy thinking. I've never heard you like this before."
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, seven2: true})); setLastOption(3);}}>
-                        He does not want to be happy.
+                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setStep(8); setLastOption(3);}}>
+                        "Healing takes time, and the pain you feel is temporary. The world is bigger than this, and no matter how hopeless you feel you are not alone. Tell me more about what's been going on?"
                     </p>
                 </div>
-                <Dialog open={open.seven1} onClose={() => {setStep(8); setOpen(state => ({...state, seven1: false}));}}>    
+                <Dialog open={open.seven1} disableBackdropClick onClose={() => {setOpen(state => ({...state, seven1: false}));}}>    
                     <DialogContent className="popup">
-                        <p>Longterm feelings of sadness and hopelessness may indicate something more serious.</p>
-                        <div className="click-to-close" onClick={() => {setStep(8); setOpen(state => ({...state, seven1: false}));}}>
-                            <p>[ Click to continue ]</p>
+                        <p>While exercise has been proven to improve mental health, it doesn't solve John's current problem. Try asking him more about how he's feeling.</p>
+                        <div className="click-to-close" onClick={() => {setOpen(state => ({...state, seven1: false}));}}>
+                            <p>[ Click to retry ]</p>
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.seven2} onClose={() => {setOpen(state => ({...state, seven2: false}));}}>
+                <Dialog open={open.seven2} disableBackdropClick onClose={() => {setOpen(state => ({...state, seven2: false}));}}>
                     <DialogContent className="popup">
                         <p>
-                            It's unlikely John does not want to be happy. Feeling sad is normal and will pass if dealt with properly.
+                            Insulting John, even jokingly, is not appropriate in this situation.
                         </p>
                         <div className="click-to-close" onClick={() => {setOpen(state => ({...state, seven2: false}));}}>
                             <p>[ Click to retry ]</p>
@@ -658,24 +649,17 @@ function FriendDepression() {
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
-                    [ You ask John for more details about his situation ]. "Honestly, I haven't been sleeping
-                    well lately and I'm not sure what to do."
+                    "Honestly, I haven't been sleeping well lately and I'm not sure what to do."
                 </h1>
 
 
-                {lastStep === 6 ? (
-                    <div className="last-dialogue-option">
-                        {lastOption === 1 ? (
-                            <p>The stess of school and his breakup are too much.</p>
-                        ) : (
-                            <p>He's just always sad.</p>
-                        )}
-                    </div>
-                ) : (
-                    <div className="last-dialogue-option">
-                            <p>[ Prompt John for more details about his situation ]</p>
-                    </div>
-                )}
+                <div className="last-dialogue-option">
+                        <p> 
+                            "Healing takes time, and the pain you feel is temporary. 
+                            The world is bigger than this, and no matter how hopeless you feel you are not alone. 
+                            Tell me more about what's been going on?"
+                        </p>
+                </div>
 
 
                 <div className="dialogue-options fade-in-longer">
@@ -689,7 +673,7 @@ function FriendDepression() {
                         "This will also pass."
                     </p>
                 </div>
-                <Dialog open={open.eight1} onClose={() => {setStep(9); setOpen(state => ({...state, eight1: false}));}}>    
+                <Dialog open={open.eight1} disableBackdropClick onClose={() => {setStep(9); setOpen(state => ({...state, eight1: false}));}}>    
                     <DialogContent className="popup">
                         <p>This is a wrap-around way of asking if he's seen a professional, or if he is self-medicating. Be more direct!</p>
                         <div className="click-to-close" onClick={() => {setStep(9); setOpen(state => ({...state, eight1: false}));}}>
@@ -697,7 +681,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.eight2} onClose={() => {setOpen(state => ({...state, eight2: false}));}}>
+                <Dialog open={open.eight2} disableBackdropClick onClose={() => {setOpen(state => ({...state, eight2: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             This invalidates how John is feeling and may push him to continue ignoring the issue.
@@ -739,7 +723,7 @@ function FriendDepression() {
                     </p>
                 </div>
 
-                <Dialog open={open.nine1} onClose={() => {setStep(10); setOpen(state => ({...state, nine1: false}));}}>    
+                <Dialog open={open.nine1} disableBackdropClick onClose={() => {setStep(10); setOpen(state => ({...state, nine1: false}));}}>    
                     <DialogContent className="popup">
                         <p>
                             It can be helpful to help him understand that it might take a while for him to get better,
@@ -750,7 +734,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.nine2} onClose={() => {setOpen(state => ({...state, nine2: false}));}}>
+                <Dialog open={open.nine2} disableBackdropClick onClose={() => {setOpen(state => ({...state, nine2: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             It's best not to recommend medicine to other people since you don't know their medical history.
@@ -804,7 +788,7 @@ function FriendDepression() {
                     </p>
                 </div>
 
-                <Dialog open={open.ten1} onClose={() => {setStep(11); setOpen(state => ({...state, ten1: false}));}}>    
+                <Dialog open={open.ten1} disableBackdropClick onClose={() => {setStep(11); setOpen(state => ({...state, ten1: false}));}}>    
                     <DialogContent className="popup">
                         <p>
                             John is aware that resources do exist, but does not have experience using them.
@@ -814,7 +798,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.ten2} onClose={() => {setOpen(state => ({...state, ten2: false}));}}>
+                <Dialog open={open.ten2} disableBackdropClick onClose={() => {setOpen(state => ({...state, ten2: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             John is clearly unhappy with his current situation. He wants help but is afraid of the social stigma surrounding mental health
@@ -863,7 +847,7 @@ function FriendDepression() {
                     </p>
                 </div>
 
-                <Dialog open={open.eleven3} onClose={() => {setStep(12); setOpen(state => ({...state, eleven3: false}));}}>
+                <Dialog open={open.eleven3} disableBackdropClick onClose={() => {setStep(12); setOpen(state => ({...state, eleven3: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             <span style={{fontWeight: 'bold', textDecoration: 'underline'}}>Myth:</span> Personality weakness or character flaws cause mental health problems, and if you
@@ -882,7 +866,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.eleven1} onClose={() => {setStep(12); setOpen(state => ({...state, eleven1: false}));}}>    
+                <Dialog open={open.eleven1} disableBackdropClick onClose={() => {setStep(12); setOpen(state => ({...state, eleven1: false}));}}>    
                     <DialogContent className="popup">
                         <p>
                             Studies show that people with mental health problems get better and many recover completely. Recovery
@@ -894,7 +878,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.eleven2} onClose={() => {setOpen(state => ({...state, eleven2: false}));}}>
+                <Dialog open={open.eleven2} disableBackdropClick onClose={() => {setOpen(state => ({...state, eleven2: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             John is clearly concerned about his mental health and wants to get better.
@@ -940,7 +924,7 @@ function FriendDepression() {
                     </p>
                 </div>
 
-                <Dialog open={open.twelve3} onClose={() => {setStep(13); setOpen(state => ({...state, twelve1: false}));}}>    
+                <Dialog open={open.twelve3} disableBackdropClick onClose={() => {setStep(13); setOpen(state => ({...state, twelve1: false}));}}>    
                     <DialogContent className="popup">
                         <p>
                             Here is a list of on campus resources John could use. Click on them to get more information!
@@ -957,7 +941,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.twelve1} onClose={() => {setOpen(state => ({...state, twelve1: false}));}}>    
+                <Dialog open={open.twelve1} disableBackdropClick onClose={() => {setOpen(state => ({...state, twelve1: false}));}}>    
                     <DialogContent className="popup">
                         <p>
                             You aren't his therapist! This could leave you on the hook for all this troubles, and delay him seeking treatment.
@@ -967,7 +951,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.twelve2} onClose={() => {setOpen(state => ({...state, twelve2: false}));}}>
+                <Dialog open={open.twelve2} disableBackdropClick onClose={() => {setOpen(state => ({...state, twelve2: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             This promotes unhealthy coping via substance use, and could put John in danger.
@@ -1006,7 +990,7 @@ function FriendDepression() {
                     </p>
                 </div>
 
-                <Dialog open={open.thirteen1} onClose={() => {setStep(14); setOpen(state => ({...state, thirteen1: false}));}}>    
+                <Dialog open={open.thirteen1} disableBackdropClick onClose={() => {setStep(14); setOpen(state => ({...state, thirteen1: false}));}}>    
                     <DialogContent className="popup">
                         <p>
                             This is a good tool to use for momentary peace, but this will not promote him to seek treatment.
@@ -1016,7 +1000,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.thirteen2} onClose={() => {setOpen(state => ({...state, thirteen2: false}));}}>
+                <Dialog open={open.thirteen2} disableBackdropClick onClose={() => {setOpen(state => ({...state, thirteen2: false}));}}>
                     <DialogContent className="popup">
                         <p>
                             While talking to your advisor can be helpful, John will most likely be pointed towards CAPS or ODOS.
@@ -1056,7 +1040,7 @@ function FriendDepression() {
                     </p>
                 </div>
 
-                <Dialog open={open.fourteen} onClose={() => {setOpen(state => ({...state, fourteen: false}));}}>    
+                <Dialog open={open.fourteen} disableBackdropClick onClose={() => {setOpen(state => ({...state, fourteen: false}));}}>    
                     <DialogContent className="popup">
                         <p>
                             John's advisor will likely point him to CAPS. It's best to use a more direct resource.
@@ -1099,7 +1083,7 @@ function FriendDepression() {
                     </p>
                 </div>
 
-                <Dialog open={open.fifteen1} onClose={() => {setOpen(state => ({...state, fifteen1: false}));}}>    
+                <Dialog open={open.fifteen1} disableBackdropClick onClose={() => {setOpen(state => ({...state, fifteen1: false}));}}>    
                     <DialogContent className="popup">
                         <p>
                             CAPS provides psychological services for students at Purdue. <br />
@@ -1111,7 +1095,7 @@ function FriendDepression() {
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.fifteen2} onClose={() => {setOpen(state => ({...state, fifteen2: false}));}}>    
+                <Dialog open={open.fifteen2} disableBackdropClick onClose={() => {setOpen(state => ({...state, fifteen2: false}));}}>    
                     <DialogContent className="popup">
                         <p>
                             Incorrect! CAPS provides psychological services for students at Purdue. <br />
