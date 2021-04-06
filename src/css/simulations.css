@@ -179,6 +179,23 @@
 .popup a:visited {
     color: white;
 }
+.finish {
+    animation: slide-page-up 1s forwards;
+}
+.finish p {
+    font-family: rubik, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: white;
+}
+@keyframes slide-page-up {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
 @media screen and (max-width: 1366px) {
     .dialogue h1 {

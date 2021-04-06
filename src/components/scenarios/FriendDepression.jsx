@@ -9,7 +9,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 
 function FriendDepression() {
     const [isLoaded, setisLoaded] = useState(false);
-    const [step, setStep] = useState(0);
+    const [step, setStep] = useState(16);
     const [lastStep, setLastStep] = useState(0);
     const [lastOption, setLastOption] = useState(0);
     const option1 = useRef(null);
@@ -224,6 +224,9 @@ function FriendDepression() {
 
             case 16:
                 return step16();
+
+            case 17:
+                return step17();
 
             default:
                 break;
@@ -1123,6 +1126,21 @@ function FriendDepression() {
                     <p>"CAPS provides psychological services for students at Purdue. You can do private or group sessions!"</p>
                 </div>
 
+                {/* <div className="dialogue-options fade-in-longer">
+                    <p className='white-background' ref={option1} onClick={() => {setStep(17);}}>
+                        [ Click to finish ]
+                    </p>
+                </div> */}
+
+            </div>
+        );
+    }
+
+    function step17() {
+        return (
+            <div className="App homepage finish" key={step}>
+                <h1>You did great!</h1>
+                <p>test</p>
             </div>
         );
     }
