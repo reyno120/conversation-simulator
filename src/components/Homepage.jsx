@@ -63,7 +63,7 @@ function Homepage(props) {
 
 
     return (
-      <div className={`homepage ${props.translate}`}>
+      <div className={`homepage ${props.translate}`} style={{display: props.display}}>
           <div className={faculty || friend || student ? "faded" : ""}>
             <h1>Choose which role you're interested in!</h1>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 951.5 47.5"><defs><style></style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path stroke={faculty || friend || student ? '#A4A4A4' : '#ffffff'} fill="none" strokeMiterlimit="10" className="cls-1" d="M0,.5C596.36,1.71,950.93,4.43,951,9.22c.11,7.29-823.06,14.24-823,24.41,0,4.6,168.43,9.11,566,13.37"/></g></g></svg>

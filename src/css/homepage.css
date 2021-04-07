@@ -9,6 +9,7 @@
     font-weight: 400;
     position: relative;
     overflow: hidden;
+    animation: slide-up-in-page 1s forwards;
 }
 .homepage h1 {
     margin-bottom: 0;
@@ -166,6 +167,18 @@
     animation: slide-up-page 1s forwards;
   }
   @keyframes slide-up-page {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  .slide-up-in-page {
+    animation: slide-up-in-page 1s forwards;
+  }
+  @keyframes slide-up-in-page {
     0% {
       transform: translateY(0);
     }
