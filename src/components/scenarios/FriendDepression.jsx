@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import LoadingScreen from '../LoadingScreen.jsx';
 import FriendScenarios from '../FriendScenarios';
+import ProgressBar from '../ProgressBar.jsx';
 import '../../css/simulations.css';
 import video from '../../video/scenario1.webm';
 import Dialog from '@material-ui/core/Dialog';
@@ -9,7 +10,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 
 function FriendDepression(props) {
     const [isLoaded, setisLoaded] = useState(false);
-    const [step, setStep] = useState(11);
+    const [step, setStep] = useState(8);
     const [lastStep, setLastStep] = useState(0);
     const [lastOption, setLastOption] = useState(0);
     const option1 = useRef(null);
@@ -85,11 +86,17 @@ function FriendDepression(props) {
     return (
         <div style={{width: '100%', height: '100vh', overflow: 'hidden'}}>
             <LoadingScreen fade={'fade-out'} animation={''} />
+
             <div className={step > 1 ? 'simulation background-scenario1' : 'simulation'} onClick={() => friendDepressionVid.current.pause()}>
                 {step > 0 ? renderVideo() : renderVideo('none')}
                 {renderDialogue()}
 
             </div>
+
+            {step < 17 ? (
+                <ProgressBar color="#758FB4" width={step / 16 * 100} />
+            ) : (<div style={{height: '0'}}></div>)}
+
         </div>
     );
 
@@ -756,10 +763,6 @@ function FriendDepression(props) {
 
                 {lastStep === 8 ? (
                     <div className="last-dialogue-option">
-                        <p>"Have you talked to a professional yet?"</p>
-                    </div>
-                ) : (
-                    <div className="last-dialogue-option">
                         {lastOption === 1 ? (
                             <p>
                                 "Sleeping medicine will help you sleep, but it's not treating the underlying issue. Talking to
@@ -768,6 +771,10 @@ function FriendDepression(props) {
                         ) : (
                             <p>"You just need to give it more time, eventually the stress and heartbreak will go away"</p>
                         )}
+                    </div>                    
+                ) : (
+                    <div className="last-dialogue-option">
+                        <p>"Have you talked to a professional yet?"</p>
                     </div>
                 )}
 
@@ -961,7 +968,7 @@ function FriendDepression(props) {
 
     function step13() {
         setVideoTime(7.5, 8);
-        
+
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">

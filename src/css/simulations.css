@@ -278,9 +278,9 @@
 }
 
 @media screen and (max-width: 414px) {
-    .simulation {
+    /* .simulation {
         background-image: url('../images/home-interior-background-mobile.jpg');
-    }
+    } */
     .dialogue-options {
         width: 85%;
         /* top: 75%; */

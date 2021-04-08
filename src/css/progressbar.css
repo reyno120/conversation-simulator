@@ -1,0 +1,35 @@
+.progress-background {
+    height: 6px;
+    width: 95.5%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 1%;
+    background-color: rgb(240, 240, 240);
+    border-radius: 1em;
+    animation: fade-in 3s forwards;
+}
+.progress-fill {
+    height: 100%;
+    border-radius: inherit;
+    text-align: right;
+    transition: width 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .progress-background {
+        width: 90%;
+    }
+}
