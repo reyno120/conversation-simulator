@@ -9,7 +9,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 
 function FriendDepression(props) {
     const [isLoaded, setisLoaded] = useState(false);
-    const [step, setStep] = useState(16);
+    const [step, setStep] = useState(11);
     const [lastStep, setLastStep] = useState(0);
     const [lastOption, setLastOption] = useState(0);
     const option1 = useRef(null);
@@ -936,8 +936,9 @@ function FriendDepression(props) {
                 <Dialog open={open.twelve1} disableBackdropClick onClose={() => {setOpen(state => ({...state, twelve1: false}));}}>    
                     <DialogContent className="popup">
                         <p>
-                            You aren't his therapist! This could leave you on the hook for all this troubles, and delay him seeking treatment.
+                            John needs to speak to a professional. You can support him, but encouraging treatment will help him the most.
                         </p>
+                        <p><a href="https://www.arcadia.edu/life-arcadia/campus-services/wellness-services/counseling-services/resources/how-help-friend" target="_blank" rel="noopener noreferrer">How to Help a Friend Who's Struggling Emotionally</a></p>
                         <div className="click-to-close" onClick={() => {setOpen(state => ({...state, twelve1: false}));}}>
                             <p>[ Click to retry ]</p>
                         </div>
@@ -948,6 +949,7 @@ function FriendDepression(props) {
                         <p>
                             This promotes unhealthy coping via substance use, and could put John in danger.
                         </p>
+                        <p><a href="https://www.mayoclinic.org/diseases-conditions/depression/in-depth/depression/art-20045943" target="_blank" rel="noopener noreferrer">Depression: Supporting a family member or friend</a></p>
                         <div className="click-to-close" onClick={() => {setOpen(state => ({...state, twelve2: false}));}}>
                             <p>[ Click to retry ]</p>
                         </div>
@@ -958,6 +960,8 @@ function FriendDepression(props) {
     }
 
     function step13() {
+        setVideoTime(7.5, 8);
+        
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
@@ -1141,6 +1145,7 @@ function FriendDepression(props) {
                             <li><a href="https://www.arcadia.edu/life-arcadia/campus-services/wellness-services/counseling-services/resources/how-help-friend" target="_blank" rel="noopener noreferrer">How to Help a Friend Who's Struggling Emotionally</a></li>
                             <li><a href="https://psychcentral.com/blog/how-to-help-someone-going-through-a-tough-time#1" target="_blank" rel="noopener noreferrer">How to Help Someone Going Through a Tough Time</a></li>
                             <li><a href="https://www.betterhelp.com/advice/general/why-is-it-that-nothing-makes-me-happy/" target="_blank" rel="noopener noreferrer">Why Is It That Nothing Makes Me Happy</a></li>
+                            <li><a href="https://www.mayoclinic.org/diseases-conditions/depression/in-depth/depression/art-20045943" target="_blank" rel="noopener noreferrer">Depression: Supporting a family member or friend</a></li>
                             <li><a href="https://www.mentalhealth.gov/basics/mental-health-myths-facts" target="_blank" rel="noopener noreferrer">Mental Health Myths and Facts</a></li>
                         </ul>
                     </div>
