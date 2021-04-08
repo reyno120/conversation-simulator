@@ -94,7 +94,7 @@ function FriendDepression(props) {
             </div>
 
             {step < 17 ? (
-                <ProgressBar color="#758FB4" width={step / 16 * 100} />
+                <ProgressBar color="#353956" width={step / 16 * 100} />
             ) : (<div style={{height: '0'}}></div>)}
 
         </div>
@@ -724,7 +724,7 @@ function FriendDepression(props) {
                         "You just need to give it more time, eventually the stress and heartbreak will go away"
                     </p>
                     <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, nine2: true})); setLastOption(3);}}>
-                        "Have you heard of<em>SleepNow</em>? I hear it works amazingly!"
+                        "Have you heard of <em>SleepNow</em>? I hear it works amazingly!"
                     </p>
                 </div>
 

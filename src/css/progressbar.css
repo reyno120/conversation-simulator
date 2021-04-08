@@ -1,6 +1,6 @@
 .progress-background {
-    height: 6px;
-    width: 95.5%;
+    height: 10px;
+    width: 62%;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
@@ -25,6 +25,12 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .progress-background {
+        height: 8px;
     }
 }
 
