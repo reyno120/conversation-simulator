@@ -86,7 +86,7 @@ function App() {
     switch(scenario) {
       case 'friend-depression':
         return (
-          <FriendDepression />
+          <FriendDepression setScenario={setScenario} setTranslateHome={setTranslateHome} setDisplayFriendScenarios={setDisplayFriendScenarios} />
         );
 
       default:

@@ -7,9 +7,9 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 
 
-function FriendDepression() {
+function FriendDepression(props) {
     const [isLoaded, setisLoaded] = useState(false);
-    const [step, setStep] = useState(0);
+    const [step, setStep] = useState(16);
     const [lastStep, setLastStep] = useState(0);
     const [lastOption, setLastOption] = useState(0);
     const option1 = useRef(null);
@@ -59,10 +59,13 @@ function FriendDepression() {
             friendDepressionVid.current.play();
 
             const interval = setInterval(() => {
-                if(friendDepressionVid.current.currentTime > endTime) {
-                    friendDepressionVid.current.pause();
-                    clearInterval(interval);
+                if(friendDepressionVid.current !== null) {  //check in case component unmounted
+                    if(friendDepressionVid.current.currentTime > endTime) {
+                        friendDepressionVid.current.pause();
+                        clearInterval(interval);
+                    }
                 }
+                else clearInterval(interval);
             }, 500);
         }, 501);
     }
@@ -1114,11 +1117,11 @@ function FriendDepression() {
                     <p>"CAPS provides psychological services for students at Purdue. You can do private or group sessions!"</p>
                 </div>
 
-                {/* <div className="dialogue-options fade-in-longer">
+                <div className="dialogue-options fade-in-longer">
                     <p className='white-background' ref={option1} onClick={() => {setStep(17);}}>
                         [ Click to finish ]
                     </p>
-                </div> */}
+                </div>
 
             </div>
         );
@@ -1127,8 +1130,38 @@ function FriendDepression() {
     function step17() {
         return (
             <div className="App homepage finish" key={step}>
-                <h1>You did great!</h1>
-                <p>test</p>
+                <h1>You did great! In case you missed them:</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 951.5 47.5"><defs><style></style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path stroke='#ffffff' fill="none" strokeMiterlimit="10" className="cls-1" d="M0,.5C596.36,1.71,950.93,4.43,951,9.22c.11,7.29-823.06,14.24-823,24.41,0,4.6,168.43,9.11,566,13.37"/></g></g></svg>
+                
+                <div className="research-resources">
+                    <div className="research">
+                        <h2>Research</h2>
+                        <ul>
+                            <li><a href="https://www.ahealthiermichigan.org/2015/04/10/importance-face-to-face-communication/" target="_blank" rel="noopener noreferrer">Why You Still Need Face-to-Face Communication</a></li>
+                            <li><a href="https://www.arcadia.edu/life-arcadia/campus-services/wellness-services/counseling-services/resources/how-help-friend" target="_blank" rel="noopener noreferrer">How to Help a Friend Who's Struggling Emotionally</a></li>
+                            <li><a href="https://psychcentral.com/blog/how-to-help-someone-going-through-a-tough-time#1" target="_blank" rel="noopener noreferrer">How to Help Someone Going Through a Tough Time</a></li>
+                            <li><a href="https://www.betterhelp.com/advice/general/why-is-it-that-nothing-makes-me-happy/" target="_blank" rel="noopener noreferrer">Why Is It That Nothing Makes Me Happy</a></li>
+                            <li><a href="https://www.mentalhealth.gov/basics/mental-health-myths-facts" target="_blank" rel="noopener noreferrer">Mental Health Myths and Facts</a></li>
+                        </ul>
+                    </div>
+                    <div className="resources">
+                        <h2>Resources</h2>
+                        <ul>
+                            <li><a href="https://www.purdue.edu/caps/" target="_blank" rel="noopener noreferrer">Counseling and Psychological Services (CAPS)</a></li>
+                            <li><a href="https://www.purdue.edu/odos/" target="_blank" rel="noopener noreferrer">Office of the Dean of Students (ODOS)</a></li>
+                            <li><a href="https://www.purdue.edu/odos/care/" target="_blank" rel="noopener noreferrer">Center for Advocacy, Response, and Education (CARE)</a></li>
+                            <li><a href="https://www.purdue.edu/recwell/fitness-wellness/wellness/mindfulness.php" target="_blank" rel="noopener noreferrer">CoRec Mindfulness Room</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p className="finish-button" onClick={() => {
+                    props.setTranslateHome('slide-down-page');
+                    props.setDisplayFriendScenarios('none');
+                    props.setScenario(false);
+                    }}>
+                    [ Click to return home ]
+                </p>
             </div>
         );
     }

@@ -188,6 +188,39 @@
     font-style: normal;
     color: white;
 }
+.finish h1 {
+    font-size: 3.875rem;
+    font-weight: 300;
+}
+.finish svg {
+    width: 53%;
+}
+.research-resources {
+    justify-content: space-evenly;
+    display: flex;
+}
+.research-resources h2 {
+    font-size: 2rem;
+    color: white;
+    margin-top: 15%;
+}
+.research-resources ul li {
+    color: white;
+    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 8%;
+}
+.research-resources ul li a {
+    color: white;
+
+}
+.finish p {
+    font-size: 1.5rem;
+    margin: auto;
+    margin-top: 10%;
+    cursor: pointer;
+    width: fit-content;
+}
 @keyframes slide-page-up {
     0% {
         transform: translateY(-100%);
@@ -212,6 +245,35 @@
     .last-dialogue-option p {
         font-size: 1.25rem;
         transform: translate(-50%, -120%);
+    }
+    .finish h1 {
+        font-size: 3.375rem;
+    }
+    .finish svg {
+        width: 64%;
+    }
+    .research-resources h2 {
+        font-size: 1.5rem;
+    }
+    .research-resources ul li {
+        font-size: 1rem;
+    }
+    .finish p {
+        font-size: 1.25rem;
+        margin-top: 10%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .finish p {
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .research-resources {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -252,5 +314,21 @@
     .popup ul {
         width: 80%;
         font-size: 1rem;
+    }
+    .finish h1 {
+        font-size: 2rem;
+    }
+    .finish svg {
+        width: 90%;
+    }
+    .research-resources h2 {
+        font-size: 1rem;
+    }
+    .research-resources ul li {
+        font-size: 0.75rem;
+    }
+    .finish p {
+        font-size: 1rem;
+        margin-top: 15%;
     }
 }
