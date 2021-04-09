@@ -258,7 +258,7 @@ function FriendDepression(props) {
         return (
             <div className="dialogue" key={step}>
                 <h1>
-                    Your friend, John, might be dealing with depression and you want to talk to them about it.
+                    Your friend John might be dealing with depression and you want to talk to them about it.
                     What's the best method to have this conversation?
                 </h1>
 
@@ -364,7 +364,7 @@ function FriendDepression(props) {
                         "There's plenty of fish in the sea."
                     </p>
                     <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(4); setLastOption(2);}}>
-                        "Why don't you tell me about it?"
+                        "Would you like to tell me about it?"
                     </p>
                     <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, two1: true})); setLastStep(2); setLastOption(3);}}>
                         "Breakups are tough."
@@ -466,7 +466,7 @@ function FriendDepression(props) {
                         {lastOption === 1 ? (
                             <p>"There's plenty of fish in the sea."</p>
                         ) : (
-                            <p>"Why don't you tell me about it?"</p>
+                            <p>"Would you like to tell me about it?"</p>
                         )}
                     </div>
                 )}
@@ -609,7 +609,7 @@ function FriendDepression(props) {
         return (
             <div className="dialogue" key={step}>
                 <h1 className="fade-in">
-                    "I mean who hasn't thought of it?"
+                    "I mean, who hasn't thought of it?"
                 </h1>
 
 
@@ -626,7 +626,7 @@ function FriendDepression(props) {
                         "Dude that's no good, did you get a concussion or something? Cause that's some crazy thinking. I've never heard you like this before."
                     </p>
                     <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, seven2: true})); setLastOption(3);}}>
-                        "Healing takes time, and the pain you feel is temporary. The world is bigger than this, and no matter how hopeless you feel you are not alone. Tell me more about what's been going on?"
+                        "I understand things are rough, healing takes time. Just know that no matter how opeless you feel you're not alone. Would you like to tell me more about what's been going on?"
                     </p>
                 </div>
                 <Dialog open={open.seven1} disableBackdropClick onClose={() => {setOpen(state => ({...state, seven1: false}));}}>    
@@ -661,9 +661,9 @@ function FriendDepression(props) {
 
                 <div className="last-dialogue-option">
                         <p> 
-                            "Healing takes time, and the pain you feel is temporary. 
-                            The world is bigger than this, and no matter how hopeless you feel you are not alone. 
-                            Tell me more about what's been going on?"
+                            "I understand things are rough, healing takes time. 
+                            Just know that no matter how opeless you feel you're not alone. 
+                            Would you like to tell me more about what's been going on?"
                         </p>
                 </div>
 
