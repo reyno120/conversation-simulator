@@ -112,6 +112,7 @@
 }
 .last-dialogue-option p {
     width: fit-content;
+    max-width: 60%;
     padding: 0.5em 1em;
     position: absolute;
     top: 77%;
@@ -221,6 +222,17 @@
     cursor: pointer;
     width: fit-content;
 }
+.attribution {
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+    color: white;
+    font-size: 12px;
+}
+.attribution a {
+    color: rgb(65, 65, 65);
+    text-decoration: none;
+}
 @keyframes slide-page-up {
     0% {
         transform: translateY(-100%);
@@ -262,6 +274,9 @@
         font-size: 1.25rem;
         margin-top: 10%;
     }
+    .attribution {
+        font-size: 10px;
+    }
 }
 
 @media screen and (max-width: 1280px) {
@@ -281,6 +296,9 @@
     /* .simulation {
         background-image: url('../images/home-interior-background-mobile.jpg');
     } */
+    .background-scenario1 {
+        background-image: url('../images/home-interior-background-mobile.jpg');
+    }
     .dialogue-options {
         width: 85%;
         /* top: 75%; */
@@ -297,6 +315,7 @@
         text-align: center;
         font-size: 1rem;
         width: fit-content;
+        max-width: 85%;
     }
     .friend-depression-video {
         /* top: 33%; */
@@ -330,5 +349,8 @@
     .finish p {
         font-size: 1rem;
         margin-top: 15%;
+    }
+    .attribution {
+        font-size: 9px;
     }
 }

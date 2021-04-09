@@ -88,6 +88,7 @@ function FriendDepression(props) {
             <LoadingScreen fade={'fade-out'} animation={''} />
 
             <div className={step > 1 ? 'simulation background-scenario1' : 'simulation'} onClick={() => friendDepressionVid.current.pause()}>
+                <p className="attribution" style={step > 1 ? {} : {display: 'none'}}><a target="_blank" rel="noopener noreferrer" href="http://www.freepik.com">Image designed by pikisuperstar / Freepik</a></p>
                 {step > 0 ? renderVideo() : renderVideo('none')}
                 {renderDialogue()}
 
