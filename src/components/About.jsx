@@ -26,7 +26,7 @@ function About(props) {
                 Many of the conversational elements were modeled after the QPR Sucicide Intervention course under 
                 Fair Use guidelines, but is not intended to replace any QPR training program. This is fully intended to be a 
                 comfortable simulation of mental-health focused conversations in order to promote healthy conversation and knowledge
-                of available resources, a purely educational tool. 
+                of available resources. 
             </p>
         </div>
     );
