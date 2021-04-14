@@ -5,6 +5,7 @@ import Homepage from './components/Homepage.jsx';
 import FacultyScenarios from './components/FacultyScenarios.jsx';
 import FriendScenarios from './components/FriendScenarios.jsx';
 import FriendDepression from './components/scenarios/FriendDepression.jsx';
+import FacultyStudent from './components/scenarios/FacultyStudent.jsx';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -76,7 +77,7 @@ function App() {
       <div className="App">
         <About translate={translateAbout} selectContinue={selectContinue} display={displayAbout} />
         <Homepage translate={translateHome} display={displayHome} selectRole={selectRole} />
-        <FacultyScenarios display={displayFacultyScenarios} selectRole={selectRole} selectScenario={selectScenario} animation={'slide-up-page'} videoAnimation={'video-animation'}/>
+        <FacultyScenarios display={displayFacultyScenarios} selectRole={selectRole} selectScenario={selectScenario} animation={translateRole} />
         <FriendScenarios display={displayFriendScenarios} selectRole={selectRole} selectScenario={selectScenario} animation={translateRole} />
       </div>
     );
@@ -87,6 +88,11 @@ function App() {
       case 'friend-depression':
         return (
           <FriendDepression setScenario={setScenario} setTranslateHome={setTranslateHome} setDisplayFriendScenarios={setDisplayFriendScenarios} />
+        );
+
+      case 'faculty-student':
+        return (
+          <FacultyStudent setScenario={setScenario} setTranslateHome={setTranslateHome} setDisplayFacultyScenarios={setDisplayFacultyScenarios} />
         );
 
       default:

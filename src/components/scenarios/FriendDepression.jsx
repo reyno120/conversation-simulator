@@ -256,20 +256,20 @@ function FriendDepression(props) {
         setVideoTime(0, 0);
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-background" key={step}>
                 <h1>
                     Your friend John might be dealing with depression and you want to talk to them about it.
                     What's the best method to have this conversation?
                 </h1>
 
                 <div className="dialogue-options">
-                    <p className='blue-background' ref={option1} onMouseEnter={() => setOptionAlt(1, true)} onMouseLeave={() => setOptionAlt(1, false)} onClick={() => {setOpen(state => ({...state, zero: true})); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOptionAlt(1, true)} onMouseLeave={() => setOptionAlt(1, false)} onClick={() => {setOpen(state => ({...state, zero: true})); setLastOption(1);}}>
                         [ Send him a text ]
                     </p>
-                    <p className='blue-background' ref={option2} onMouseEnter={() => setOptionAlt(2, true)} onMouseLeave={() => setOptionAlt(2, false)} onClick={() => {setStep(1); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOptionAlt(2, true)} onMouseLeave={() => setOptionAlt(2, false)} onClick={() => {setStep(1); setLastOption(2);}}>
                         [ Meet him in person ]
                     </p>
-                    <p className='blue-background' ref={option3} onMouseEnter={() => setOptionAlt(3, true)} onMouseLeave={() => setOptionAlt(3, false)} onClick={() => {setOpen(state => ({...state, zero: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOptionAlt(3, true)} onMouseLeave={() => setOptionAlt(3, false)} onClick={() => {setOpen(state => ({...state, zero: true})); setLastOption(3);}}>
                         [ Facetime him ]
                     </p>
                 </div>
@@ -290,7 +290,7 @@ function FriendDepression(props) {
         setVideoTime(7.5, 8);
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-background" key={step}>
                 <h1 className="fade-in">
                     John has agreed to meet with you in person. Where is the most appropriate place to meet?
                 </h1>
@@ -306,13 +306,13 @@ function FriendDepression(props) {
                 </div>
 
                 <div className="dialogue-options fade-in-longer" key={step}>
-                    <p className='blue-background' ref={option1} onMouseEnter={() => setOptionAlt(1, true)} onMouseLeave={() => setOptionAlt(1, false)} onClick={() => {setStep(2); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOptionAlt(1, true)} onMouseLeave={() => setOptionAlt(1, false)} onClick={() => {setStep(2); setLastOption(1);}}>
                         John's house
                     </p>
-                    <p className='blue-background' ref={option2} onMouseEnter={() => setOptionAlt(2, true)} onMouseLeave={() => setOptionAlt(2, false)} onClick={() => {setOpen(state => ({...state, one2: true})); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOptionAlt(2, true)} onMouseLeave={() => setOptionAlt(2, false)} onClick={() => {setOpen(state => ({...state, one2: true})); setLastOption(2);}}>
                         The local Chipotle
                     </p>
-                    <p className='blue-background' ref={option3} onMouseEnter={() => setOptionAlt(3, true)} onMouseLeave={() => setOptionAlt(3, false)} onClick={() => {setOpen(state => ({...state, one1: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOptionAlt(3, true)} onMouseLeave={() => setOptionAlt(3, false)} onClick={() => {setOpen(state => ({...state, one1: true})); setLastOption(3);}}>
                         The local park
                     </p>
                 </div>
@@ -341,7 +341,7 @@ function FriendDepression(props) {
         if(!open.two1 && !open.two2) setVideoTime(99.5, 107.75);
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     [ You and John are having a conversation at his house. ] 
                     "I’m feeling really stressed out and sad right now. My classes are just really difficult 
@@ -360,13 +360,13 @@ function FriendDepression(props) {
                 </div>
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, two2: true})); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, two2: true})); setLastOption(1);}}>
                         "There's plenty of fish in the sea."
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(4); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(4); setLastOption(2);}}>
                         "Would you like to tell me about it?"
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, two1: true})); setLastStep(2); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, two1: true})); setLastStep(2); setLastOption(3);}}>
                         "Breakups are tough."
                     </p>
                 </div>
@@ -398,7 +398,7 @@ function FriendDepression(props) {
         if(!open.three1 && !open.three2) setVideoTime(3, 6.5);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     [ John looks sad after you say this. ] "I know breakups are tough, I just need to get over myself"
                 </h1>
@@ -408,13 +408,13 @@ function FriendDepression(props) {
                 </div>
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, three2: true})); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, three2: true})); setLastOption(1);}}>
                         "Yeah, you should just move on"
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(4); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(4); setLastOption(2);}}>
                         "It's okay to feel sad about it. Breakups are hard and will take time to heal."
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, three1: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, three1: true})); setLastOption(3);}}>
                         "It's okay to be sad, but at least you had a relationship."
                     </p>
                 </div>
@@ -446,7 +446,7 @@ function FriendDepression(props) {
         if(!open.four1 && !open.four2) setVideoTime(11, 16);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     "I just feel so sad and hopeless, like this feeling will never pass"
                 </h1>
@@ -473,13 +473,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, four2: true})); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, four2: true})); setLastOption(1);}}>
                         "I went through the same thing last year. It'll pass."
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, four1: true})); setLastStep(4); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, four1: true})); setLastStep(4); setLastOption(2);}}>
                         "Don't let the sad stuff get to your head. Focus on what makes you happy."
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setStep(6); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setStep(6); setLastOption(3);}}>
                         "It's okay to feel sad and hopeless. I am here for you if you need to talk or need a distraction"
                     </p>
                 </div>
@@ -510,7 +510,7 @@ function FriendDepression(props) {
         if(!open.five1 && !open.five2) setVideoTime(19.5, 25);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     "Nothing really makes me happy anymore. Things that used to interest me just don't get me excited anymore."
                 </h1>
@@ -522,13 +522,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, five1: true})); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, five1: true})); setLastOption(1);}}>
                         "That sounds like a rough time, why don't you come with me to the gym later?"
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, five2: true})); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, five2: true})); setLastOption(2);}}>
                         "If there's nothing that makes you happy then there really is nothing else you can do"
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setStep(6); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setStep(6); setLastOption(3);}}>
                         "What were some of the things that used to make you happy?"
                     </p>
                 </div>
@@ -559,7 +559,7 @@ function FriendDepression(props) {
         if(!open.six1 && !open.six2) setVideoTime(112, 116);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     "I don't know, everything seems so pointless..." There is now a quiet moment in your conversation. It feels like neither one of you has anything to say.
                     What should your next step be?
@@ -582,10 +582,10 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, six: true})); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, six: true})); setLastOption(1);}}>
                         [ Change the topic ]
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(7); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(7); setLastOption(2);}}>
                         "Have you had any thoughts of harming yourself or others?"
                     </p>
                 </div>
@@ -607,7 +607,7 @@ function FriendDepression(props) {
         if(!open.seven1 && !open.seven2) setVideoTime(120, 123.75);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     "I mean, who hasn't thought of it?"
                 </h1>
@@ -619,13 +619,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, seven1: true})); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, seven1: true})); setLastOption(1);}}>
                         "Man you're right on that, sometimes I get really frustrated too. I always find someone to call up so that I can hang, why don't you call me more often?"
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, seven1: true})); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, seven1: true})); setLastOption(2);}}>
                         "Dude that's no good, did you get a concussion or something? Cause that's some crazy thinking. I've never heard you like this before."
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, seven2: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, seven2: true})); setLastOption(3);}}>
                         "I understand things are rough, healing takes time. Just know that no matter how opeless you feel you're not alone. Would you like to tell me more about what's been going on?"
                     </p>
                 </div>
@@ -653,7 +653,7 @@ function FriendDepression(props) {
         if(!open.eight1 && !open.eight2) setVideoTime(33, 38);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     "Honestly, I haven't been sleeping well lately and I'm not sure what to do."
                 </h1>
@@ -669,13 +669,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(10); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(10); setLastOption(1);}}>
                         "Have you talked to a professional yet?"
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, eight1: true})); setLastStep(8); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, eight1: true})); setLastStep(8); setLastOption(2);}}>
                         "Are you taking any sleep aids to help?"
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, eight2: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, eight2: true})); setLastOption(3);}}>
                         "This will also pass."
                     </p>
                 </div>
@@ -705,7 +705,7 @@ function FriendDepression(props) {
         if(!open.nine1 && !open.nine2) setVideoTime(40, 49);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     "Yes. Last week I couldn't sleep without taking anything. I'm always tired and as a result my work has sucked lately"
                 </h1>
@@ -717,14 +717,14 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(10); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(10); setLastOption(1);}}>
                         "Sleeping medicine will help you sleep, but it's not treating the underlying issue. Talking to
                         a professional might be more useful."
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, nine1: true})); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, nine1: true})); setLastOption(2);}}>
                         "You just need to give it more time, eventually the stress and heartbreak will go away"
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, nine2: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, nine2: true})); setLastOption(3);}}>
                         "Have you heard of <em>SleepNow</em>? I hear it works amazingly!"
                     </p>
                 </div>
@@ -756,7 +756,7 @@ function FriendDepression(props) {
         if(!open.ten1 && !open.ten2) setVideoTime(50, 54.60);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     "I'm not sick! I'm just heartbroken and stressed out!" [ What does John's reaction prompt you to think about? ]
                 </h1>
@@ -781,13 +781,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, ten1: true})); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, ten1: true})); setLastOption(1);}}>
                         He is unaware of the resources available to him.
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(11); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setStep(11); setLastOption(2);}}>
                         He may think that talking to a professional means that his situation is dire.
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, ten2: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, ten2: true})); setLastOption(3);}}>
                         He does not want to confront his feelings.
                     </p>
                 </div>
@@ -818,7 +818,7 @@ function FriendDepression(props) {
         if(!open.eleven1 && !open.eleven2) setVideoTime(58, 65);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     "I've never seen a professional for something like this before, neither has anyone I know. Why would I?"
                     [ Why do you think John is hesitant about seeing a professional? ]
@@ -837,13 +837,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, eleven3: true})); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, eleven3: true})); setLastOption(1);}}>
                         The stigma surrounding mental health can cause many people to not be aware of the resources available to them.
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, eleven2: true})); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, eleven2: true})); setLastOption(2);}}>
                         John does not care about his mental health.
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, eleven1: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, eleven1: true})); setLastOption(3);}}>
                         John feels hopeless, like he can never recover.
                     </p>
                 </div>
@@ -896,7 +896,7 @@ function FriendDepression(props) {
         if(!open.twelve1 && !open.twelve2) setVideoTime(66, 73);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     [ You and John discuss some of the myths surrounding mental health. ]
                     "Oh, I guess it doesn't seem so bad. Maybe I should seek help, but I have no idea where to start!"
@@ -913,13 +913,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, twelve3: true})); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setOpen(state => ({...state, twelve3: true})); setLastOption(1);}}>
                         [ Give him a list of on-campus resources that he can use. ]
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, twelve2: true})); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, twelve2: true})); setLastOption(2);}}>
                         [ Invite John to a party that you are going to later today. ]
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, twelve1: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, twelve1: true})); setLastOption(3);}}>
                         [ Offer to listen to his problems and give advice. ]
                     </p>
                 </div>
@@ -971,7 +971,7 @@ function FriendDepression(props) {
         setVideoTime(7.5, 8);
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     Based on what John has told you, which of those resources do you think would best benefit him?
                 </h1>
@@ -983,13 +983,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(15); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(15); setLastOption(1);}}>
                         Counseling and Psychological Services (CAPS)
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, thirteen2: true})); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, thirteen2: true})); setLastOption(2);}}>
                         His advisor
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, thirteen1: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, thirteen1: true})); setLastOption(3);}}>
                         CoRec Mindfulness Room
                     </p>
                 </div>
@@ -1022,7 +1022,7 @@ function FriendDepression(props) {
         if(!open.fourteen1 && !open.fourteen2) setVideoTime(76, 86);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     "I'm not familiar with the&nbsp; 
                     <a href="https://www.purdue.edu/recwell/fitness-wellness/wellness/mindfulness.php" target="_blank" rel="noopener noreferrer">CoRec Mindfulness Room</a>
@@ -1036,10 +1036,10 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(15); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(15); setLastOption(1);}}>
                         Counseling and Psychological Services (CAPS)
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, fourteen: true})); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, fourteen: true})); setLastOption(2);}}>
                         His advisor
                     </p>
                 </div>
@@ -1062,7 +1062,7 @@ function FriendDepression(props) {
         if(!open.fifteen1 && !open.fifteen2) setVideoTime(88, 93);    // only plays video when dialog is not open
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
                     "I'm not familiar with&nbsp; 
                     <a href="https://www.purdue.edu/caps/" target="_blank" rel="noopener noreferrer">CAPS</a>
@@ -1076,13 +1076,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(16); setLastOption(1);}}>
+                    <p ref={option1} onMouseEnter={() => setOption(1, true)} onMouseLeave={() => setOption(1, false)} onClick={() => {setStep(16); setLastOption(1);}}>
                         "CAPS provides psychological services for students at Purdue. You can do private or group sessions!"
                     </p>
-                    <p className='white-background' ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, fifteen2: true})); setLastOption(2);}}>
+                    <p ref={option2} onMouseEnter={() => setOption(2, true)} onMouseLeave={() => setOption(2, false)} onClick={() => {setOpen(state => ({...state, fifteen2: true})); setLastOption(2);}}>
                         "CAPS provides nutrition counseling for students who want to learn how to meal prep on a budget.""
                     </p>
-                    <p className='white-background' ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, fifteen1: true})); setLastOption(3);}}>
+                    <p ref={option3} onMouseEnter={() => setOption(3, true)} onMouseLeave={() => setOption(3, false)} onClick={() => {setOpen(state => ({...state, fifteen1: true})); setLastOption(3);}}>
                         "I'm not really sure what CAPS does either!"
                     </p>
                 </div>
@@ -1119,9 +1119,9 @@ function FriendDepression(props) {
         setVideoTime(127, 133);
 
         return (
-            <div className="dialogue" key={step}>
+            <div className="dialogue blue-white-background" key={step}>
                 <h1 className="fade-in">
-                    "I will definitely be reaching out to them soon. Thanks so much for your help! <br/> Bye!"
+                    "I will definitely be reaching out to them soon. Thanks so much for your help!
                 </h1>
 
 
@@ -1130,7 +1130,7 @@ function FriendDepression(props) {
                 </div>
 
                 <div className="dialogue-options fade-in-longer">
-                    <p className='white-background' ref={option1} onClick={() => {setStep(17);}}>
+                    <p ref={option1} onClick={() => {setStep(17);}}>
                         [ Click to finish ]
                     </p>
                 </div>
