@@ -190,7 +190,7 @@ function FriendDepression(props) {
 
 
     function step2() {
-        if(!open.two1 && !open.two2) setVideoTime(2, 5);
+        if(!open.two1 && !open.two2) setVideoTime(1, 3);
 
         return (
             <div className="dialogue brown-white-background" key={step}>
@@ -237,7 +237,7 @@ function FriendDepression(props) {
     }
 
     function step3() {
-        if(!open.three1 && !open.three2) setVideoTime(8, 16);    // only plays video when dialog is not open
+        if(!open.three1 && !open.three2) setVideoTime(6, 14);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue brown-white-background" key={step}>
@@ -285,7 +285,7 @@ function FriendDepression(props) {
     }
 
     function step4() {
-        if(!open.four1 && !open.four2) setVideoTime(19, 24);    // only plays video when dialog is not open
+        if(!open.four1 && !open.four2) setVideoTime(17, 21);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue brown-white-background" key={step}>
@@ -332,7 +332,7 @@ function FriendDepression(props) {
     }
 
     function step5() {
-        if(!open.five) setVideoTime(28, 34);    // only plays video when dialog is not open
+        if(!open.five) setVideoTime(24, 30);    // only plays video when dialog is not open
 
         return (
             <div className="dialogue brown-white-background" key={step}>
