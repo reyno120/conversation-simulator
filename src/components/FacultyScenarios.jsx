@@ -17,13 +17,14 @@ function FacultyScenarios(props) {
             <div className="scenarios">
                 <div className={false ? "scenario1 faded" : "scenario1"} onMouseEnter={() => setStudent(true)} onMouseLeave={() => setStudent(false)} onClick={() => props.selectScenario('faculty-student')}>
                     <h2>Student</h2>
-                    <p>Estimated time to complete: <span style={{textDecoration: 'underline'}}>2 min</span></p>
+                    <p>Estimated time to complete: <span style={{textDecoration: 'underline'}}>4 min</span></p>
                 </div>
 
-                <div className="scenario2 faded">
-                    <h2>More coming soon!</h2>
-                    {/* <p>More scenarios coming soon!</p> */}
-                </div>
+                {/* <div className="scenario2 faded">
+                    <h2></h2>
+                    <p>Estimated time to complete: <span style={{textDecoration: 'underline'}}> 6 min</span></p>
+                    <h3 className="coming-soon">Coming soon!</h3>
+                </div> */}
 
                 {/* <div className="scenario3">
                     <h2>Substance Abuse</h2>

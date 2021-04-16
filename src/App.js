@@ -4,6 +4,7 @@ import About from './components/About.jsx';
 import Homepage from './components/Homepage.jsx';
 import FacultyScenarios from './components/FacultyScenarios.jsx';
 import FriendScenarios from './components/FriendScenarios.jsx';
+import StudentScenarios from './components/StudentScenarios.jsx';
 import FriendDepression from './components/scenarios/FriendDepression.jsx';
 import FacultyStudent from './components/scenarios/FacultyStudent.jsx';
 import { useState, useEffect } from 'react';
@@ -79,6 +80,7 @@ function App() {
         <Homepage translate={translateHome} display={displayHome} selectRole={selectRole} />
         <FacultyScenarios display={displayFacultyScenarios} selectRole={selectRole} selectScenario={selectScenario} animation={translateRole} />
         <FriendScenarios display={displayFriendScenarios} selectRole={selectRole} selectScenario={selectScenario} animation={translateRole} />
+        <StudentScenarios display={displayStudentScenarios} selectRole={selectRole} selectScenario={selectScenario} animation={translateRole} />
       </div>
     );
   }
@@ -93,6 +95,11 @@ function App() {
       case 'faculty-student':
         return (
           <FacultyStudent setScenario={setScenario} setTranslateHome={setTranslateHome} setDisplayFacultyScenarios={setDisplayFacultyScenarios} />
+        );
+
+      case 'faculty-student':
+        return (
+          <StudentDepression setScenario={setScenario} setTranslateHome={setTranslateHome} setDisplayStudentScenarios={setDisplayStudentScenarios} />
         );
 
       default:
