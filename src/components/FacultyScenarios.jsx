@@ -20,16 +20,17 @@ function FacultyScenarios(props) {
                     <p>Estimated time to complete: <span style={{textDecoration: 'underline'}}>4 min</span></p>
                 </div>
 
-                {/* <div className="scenario2 faded">
-                    <h2></h2>
+                <div className="scenario2 faded">
+                    <h2>Student 2</h2>
                     <p>Estimated time to complete: <span style={{textDecoration: 'underline'}}> 6 min</span></p>
                     <h3 className="coming-soon">Coming soon!</h3>
-                </div> */}
+                </div>
 
-                {/* <div className="scenario3">
-                    <h2>Substance Abuse</h2>
-                    <p>Warning signs: Neglecting responsibilities, risk taking, bloodshot eyes, changes in appetite</p>
-                </div> */}
+                <div className="scenario3 faded">
+                    <h2>Student 3</h2>
+                    <p>Estimated time to complete: <span style={{textDecoration: 'underline'}}> 7 min</span></p>
+                    <h3 className="coming-soon">Coming soon!</h3>
+                </div>
 
             </div>
 

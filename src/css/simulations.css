@@ -19,7 +19,7 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-.background-faculty-student {
+.background-student-depression {
     background-image: url('../images/empty-office.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -56,8 +56,10 @@
     position: absolute;
     /* top: 25%; */
     bottom: 3%;
-    right: 17%;
+    /* right: 17%; */
     width: 65%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .dialogue h1 {
@@ -127,6 +129,22 @@
 .brown-white-background h1 {
     background-color: #A67C52;
     color: white;
+}
+.lightbrown-white-background p {
+    background-color: #FFFCEB;
+    color: black;
+}
+.lightbrown-white-background p:hover {
+    background-color: #EEBB84;
+    color: black;
+}
+.lightbrown-white-background h1 {
+    background-color: #EEBB84;
+    color: black;
+}
+.lightbrown-white-background .last-dialogue-option p {
+    background-color: #EEBB84;
+    color: black; 
 }
 .last-dialogue-option {
     /* max-width: 60%; */
@@ -340,7 +358,7 @@
     .background-faculty-student {
         background-image: url('../images/empty-classroom-mobile.jpg');
     }
-    .background-faculty-student {
+    .background-student-depression {
         background-image: url('../images/empty-office-mobile.jpg');
     }
     .dialogue-options {

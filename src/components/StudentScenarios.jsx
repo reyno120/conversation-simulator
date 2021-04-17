@@ -26,7 +26,7 @@ function StudentScenarios(props) {
                     <h3 className="coming-soon">Coming soon!</h3>
                 </div>
 
-                <div className="scenario3">
+                <div className="scenario3 faded">
                     <h2>Substance Abuse</h2>
                     <p>Estimated time to complete: <span style={{textDecoration: 'underline'}}> 7 min</span></p>
                     <h3 className="coming-soon">Coming soon!</h3>

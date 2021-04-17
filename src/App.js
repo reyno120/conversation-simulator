@@ -6,6 +6,7 @@ import FacultyScenarios from './components/FacultyScenarios.jsx';
 import FriendScenarios from './components/FriendScenarios.jsx';
 import StudentScenarios from './components/StudentScenarios.jsx';
 import FriendDepression from './components/scenarios/FriendDepression.jsx';
+import StudentDepression from './components/scenarios/StudentDepression.jsx';
 import FacultyStudent from './components/scenarios/FacultyStudent.jsx';
 import { useState, useEffect } from 'react';
 
@@ -97,7 +98,7 @@ function App() {
           <FacultyStudent setScenario={setScenario} setTranslateHome={setTranslateHome} setDisplayFacultyScenarios={setDisplayFacultyScenarios} />
         );
 
-      case 'faculty-student':
+      case 'student-depression':
         return (
           <StudentDepression setScenario={setScenario} setTranslateHome={setTranslateHome} setDisplayStudentScenarios={setDisplayStudentScenarios} />
         );
