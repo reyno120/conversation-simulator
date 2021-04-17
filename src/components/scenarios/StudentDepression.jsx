@@ -10,7 +10,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 
 function FriendDepression(props) {
     const [isLoaded, setisLoaded] = useState(false);
-    const [step, setStep] = useState(12);
+    const [step, setStep] = useState(0);
     const [lastStep, setLastStep] = useState(0);
     const [lastOption, setLastOption] = useState(0);
     const friendDepressionVid = useRef(null);
