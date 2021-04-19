@@ -74,6 +74,7 @@
     border-radius: 0.25em;
     line-height: 1.25em;
     padding: 0.7em 0.5em;
+    box-shadow: -6px 6px 8px rgba(0, 0, 0, .16);
 }
 .dialogue h1 a {
     cursor: pointer;
@@ -105,6 +106,7 @@
     margin-bottom: 0.5em;
     cursor: pointer;
     line-height: 1.25em;
+    box-shadow: -6px 6px 8px rgba(0, 0, 0, .16);
 }
 .blue-white-background p {
     background-color: white;
@@ -164,6 +166,7 @@
     font-size: 1.5rem;
     border-radius: 0.25em;
     margin-bottom: 0.5em;
+    box-shadow: -6px 6px 8px rgba(0, 0, 0, .16);
     animation: fade-out-long 3s forwards;
 }
 @keyframes fade-out-long {

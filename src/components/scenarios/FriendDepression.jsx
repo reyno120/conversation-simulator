@@ -95,7 +95,7 @@ function FriendDepression(props) {
             </div>
 
             {step < 17 ? (
-                <ProgressBar color="#353956" width={step / 16 * 100} />
+                <ProgressBar color="#399ADA" width={step / 16 * 100} />
             ) : (<div style={{height: '0'}}></div>)}
 
         </div>
@@ -372,7 +372,7 @@ function FriendDepression(props) {
                 </div>
                 <Dialog open={open.two1} disableBackdropClick onClose={() => {setStep(3); setOpen(state => ({...state, two1: false}));}}>    
                     <DialogContent className="popup">
-                        <p>If you're one of John's close friends, try and provide him a change to talk about how he feels. Even the general stress of life can get you down.</p>
+                        <p>If you're one of John's close friends, try and provide him a chance to talk about how he feels. Even the general stress of life can get you down.</p>
                         <p><a href="https://www.arcadia.edu/life-arcadia/campus-services/wellness-services/counseling-services/resources/how-help-friend" target="_blank" rel="noopener noreferrer">How to Help a Friend Who's Struggling Emotionally</a></p>
                         <div className="click-to-close" onClick={() => {setStep(3); setOpen(state => ({...state, two1: false}));}}>
                             <p>[ Click to continue ]</p>
