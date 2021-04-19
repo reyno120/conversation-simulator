@@ -12,6 +12,7 @@ function FriendDepression(props) {
     const [isLoaded, setisLoaded] = useState(false);
     const [step, setStep] = useState(0);
     const [lastOption, setLastOption] = useState(0);
+    const [videoPlayed, setVideoPlayed] = useState(false);
     const characterVideo = useRef(null);
     const [open, setOpen] = useState({
         one1: false, one2: false,
@@ -190,7 +191,10 @@ function FriendDepression(props) {
 
 
     function step2() {
-        if(!open.two1 && !open.two2) setVideoTime(1, 3);
+        if(!open.two1 && !open.two2 && !videoPlayed) {
+            setVideoTime(1, 3);
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue brown-white-background" key={step}>
@@ -217,10 +221,10 @@ function FriendDepression(props) {
                         "Yes, I was concerned with your attendance. That is worth 10% of your grade, so ensure you're in class for the future."
                     </p>
                 </div>
-                <Dialog open={open.two1} disableBackdropClick onClose={() => {setStep(3); setOpen(state => ({...state, two1: false}));}}>    
+                <Dialog open={open.two1} disableBackdropClick>    
                     <DialogContent className="popup" style={{backgroundColor: '#A67C52'}}>
                         <p>Direct confrontation of the issue is the best course of action. The only way to understand her problem is to ask about it.</p>
-                        <div className="click-to-close" onClick={() => {setStep(3); setOpen(state => ({...state, two1: false}));}}>
+                        <div className="click-to-close" onClick={() => {setStep(3); setVideoPlayed(false); setOpen(state => ({...state, two1: false}));}}>
                             <p>[ Click to continue ]</p>
                         </div>
                     </DialogContent>
@@ -237,7 +241,10 @@ function FriendDepression(props) {
     }
 
     function step3() {
-        if(!open.three1 && !open.three2) setVideoTime(6, 14);    // only plays video when dialog is not open
+        if(!open.three1 && !open.three2 && !videoPlayed) { // only plays video when dialog is not open
+            setVideoTime(6, 14);   
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue brown-white-background" key={step}>
@@ -268,12 +275,12 @@ function FriendDepression(props) {
                     <DialogContent className="popup" style={{backgroundColor: '#A67C52'}}>
                         <p>Sleep, Hygiene, and Self Care are all typically affected by stress. Mental illness warning signs typically present themselves as changes in behavior. A detailed list can be found here:</p>
                         <p><a href="https://www.purdue.edu/advocacy/faculty/incident.html" target="_blank" rel="noopener noreferrer">Student of Concern Reporting Link</a></p>
-                        <div className="click-to-close" onClick={() => {setStep(4); setOpen(state => ({...state, three1: false}));}}>
+                        <div className="click-to-close" onClick={() => {setStep(4); setVideoPlayed(false); setOpen(state => ({...state, three1: false}));}}>
                             <p>[ Click to continue ]</p>
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.three2} disableBackdropClick onClose={() => {setOpen(state => ({...state, three2: false}));}}>
+                <Dialog open={open.three2} disableBackdropClick>
                     <DialogContent className="popup" style={{backgroundColor: '#A67C52'}}>
                         <div className="click-to-close" onClick={() => {setOpen(state => ({...state, three2: false}));}}>
                             <p>[ Click to retry ]</p>
@@ -285,7 +292,10 @@ function FriendDepression(props) {
     }
 
     function step4() {
-        if(!open.four1 && !open.four2) setVideoTime(17, 21);    // only plays video when dialog is not open
+        if(!open.four1 && !open.four2 && !videoPlayed) {    // only plays video when dialog is not open
+            setVideoTime(17, 21);    
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue brown-white-background" key={step}>
@@ -315,12 +325,12 @@ function FriendDepression(props) {
                     <DialogContent className="popup" style={{backgroundColor: '#A67C52'}}>
                         <p>Filing a student of concern report is easy, and the form can be found online here:</p>
                         <p><a href="https://www.purdue.edu/advocacy/faculty/incident.html" target="_blank" rel="noopener noreferrer">Student of Concern Reporting Link</a></p>
-                        <div className="click-to-close" onClick={() => {setStep(5); setOpen(state => ({...state, four1: false}));}}>
+                        <div className="click-to-close" onClick={() => {setStep(5); setVideoPlayed(false); setOpen(state => ({...state, four1: false}));}}>
                             <p>[ Click to continue ]</p>
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.four2} disableBackdropClick onClose={() => {setOpen(state => ({...state, four2: false}));}}>
+                <Dialog open={open.four2} disableBackdropClick>
                     <DialogContent className="popup" style={{backgroundColor: '#A67C52'}}>
                         <div className="click-to-close" onClick={() => {setOpen(state => ({...state, four2: false}));}}>
                             <p>[ Click to retry ]</p>
@@ -332,7 +342,10 @@ function FriendDepression(props) {
     }
 
     function step5() {
-        if(!open.five) setVideoTime(24, 30);    // only plays video when dialog is not open
+        if(!open.five && !videoPlayed) {    // only plays video when dialog is not open
+            setVideoTime(24, 30);   
+            setVideoPlayed(true); 
+        }
 
         return (
             <div className="dialogue brown-white-background" key={step}>
@@ -359,7 +372,7 @@ function FriendDepression(props) {
                             You can also contact <a href="mailto:syeagley@purdue.edu">Steven Yeagley</a> to attend a training session typically offered 2-3 times a semester,
                             or to schedule one for your department.
                         </p>
-                        <div className="click-to-close" onClick={() => {setStep(6); setOpen(state => ({...state, five: false}));}}>
+                        <div className="click-to-close" onClick={() => {setStep(6); setVideoPlayed(false); setOpen(state => ({...state, five: false}));}}>
                             <p>[ Click to finish ]</p>
                         </div>
                     </DialogContent>
