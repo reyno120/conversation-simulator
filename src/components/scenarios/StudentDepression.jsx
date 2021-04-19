@@ -13,6 +13,7 @@ function FriendDepression(props) {
     const [step, setStep] = useState(0);
     const [lastStep, setLastStep] = useState(0);
     const [lastOption, setLastOption] = useState(0);
+    const [videoPlayed, setVideoPlayed] = useState(false);
     const friendDepressionVid = useRef(null);
     const [open, setOpen] = useState({
         one1: false, one2: false,
@@ -174,7 +175,10 @@ function FriendDepression(props) {
     }
 
     function step1() {
-        setVideoTime(2, 6);
+        if(!videoPlayed) {
+            setVideoTime(2, 6);
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -187,7 +191,7 @@ function FriendDepression(props) {
                 </div>
 
                 <div className="dialogue-options fade-in-longer" key={step}>
-                    <p onClick={() => {setStep(3); setLastStep(1); setLastOption(1);}}>
+                    <p onClick={() => {setStep(3); setVideoPlayed(false); setLastStep(1); setLastOption(1);}}>
                         "I've had a really hard time with school lately. There is a lot going on and it's 
                         just getting to be too much to handle right now."
                     </p>
@@ -202,12 +206,12 @@ function FriendDepression(props) {
                 <Dialog open={open.one1} disableBackdropClick>    
                     <DialogContent className="popup" style={{backgroundColor: '#EEBB84'}}>
                         <p>While it is good that you told them you are struggling, you don't have to pretend like you are managing it if you can't. They are here to help!</p>
-                        <div className="click-to-close" onClick={() => {setStep(2); setOpen(state => ({...state, one1: false}));}}>
+                        <div className="click-to-close" onClick={() => {setStep(2); setVideoPlayed(false); setOpen(state => ({...state, one1: false}));}}>
                             <p>[ Click to continue ]</p>
                         </div>
                     </DialogContent>
                 </Dialog>
-                <Dialog open={open.one2} disableBackdropClick onClose={() => {setOpen(state => ({...state, one2: false}));}}>
+                <Dialog open={open.one2} disableBackdropClick>
                     <DialogContent className="popup" style={{backgroundColor: '#EEBB84'}}>
                         <p>Don't just brush off the things you're going through! If you don't tell them what's going on then they won't know to help you.</p>
                         <div className="click-to-close" onClick={() => {setOpen(state => ({...state, one2: false}));}}>
@@ -221,7 +225,10 @@ function FriendDepression(props) {
 
 
     function step2() {
-        if(!open.two) setVideoTime(9, 15);
+        if(!open.two && !videoPlayed) {
+            setVideoTime(9, 15);
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -238,10 +245,10 @@ function FriendDepression(props) {
                 </div>
 
                 <div className="dialogue-options fade-in-longer">
-                    <p onClick={() => {setStep(3); setLastOption(1);}}>
+                    <p onClick={() => {setStep(3); setVideoPlayed(false); setLastOption(1);}}>
                         "I think I might end up needing help, but I don't want to burden others with my problem."
                     </p>
-                    <p onClick={() => {setStep(3); setLastOption(2);}}>
+                    <p onClick={() => {setStep(3); setVideoPlayed(false); setLastOption(2);}}>
                         "Yeah, actually I think some help would be nice. I've just fallen behind a lot and I don't know
                         if it's going to get any better on my own."
                     </p>
@@ -261,7 +268,10 @@ function FriendDepression(props) {
     }
 
     function step3() {
-        if(!open.three) setVideoTime(18, 22);    // only plays video when dialog is not open
+        if(!open.three && !videoPlayed) {   // only plays video when dialog is not open
+            setVideoTime(18, 22);    
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -290,13 +300,13 @@ function FriendDepression(props) {
                 )}
 
                 <div className="dialogue-options fade-in-longer">
-                    <p onClick={() => {setStep(4); setLastOption(1);}}>
+                    <p onClick={() => {setStep(4); setVideoPlayed(false); setLastOption(1);}}>
                         [ Tell about your situation but be vague, leave out who is in the hospital and how much it's been affecting you ]
                     </p>
                     <p onClick={() => {setOpen(state => ({...state, three: true})); setLastOption(2);}}>
                         "I don't want to talk about it."
                     </p>
-                    <p onClick={() => {setStep(5); setLastStep(3); setLastOption(3);}}>
+                    <p onClick={() => {setStep(5); setVideoPlayed(false); setLastStep(3); setLastOption(3);}}>
                         [ Tell them about what's going on with details ]
                     </p>
                 </div>
@@ -316,7 +326,10 @@ function FriendDepression(props) {
     }
 
     function step4() {
-        if(!open.four) setVideoTime(25, 35);    // only plays video when dialog is not open
+        if(!open.four && !videoPlayed) {    // only plays video when dialog is not open
+            setVideoTime(25, 35);    
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -334,10 +347,10 @@ function FriendDepression(props) {
                     <p onClick={() => {setOpen(state => ({...state, four: true})); setLastOption(1);}}>
                         "Actually, I would prefer not to talk about it."
                     </p>
-                    <p onClick={() => {setStep(5); setLastOption(2);}}>
+                    <p onClick={() => {setStep(5); setVideoPlayed(false); setLastOption(2);}}>
                         "For some time. I'm trying hard to remain strong throughout it. I don't want my family to worry about me too."
                     </p>
-                    <p onClick={() => {setStep(5); setLastOption(3);}}>
+                    <p onClick={() => {setStep(5); setVideoPlayed(false); setLastOption(3);}}>
                         "It has been going on for a few months now. It just really sucks because it is someone I am close to and I am really worried about them."
                     </p>
                 </div>
@@ -357,7 +370,10 @@ function FriendDepression(props) {
     }
 
     function step5() {
-        if(!open.five) setVideoTime(38, 48);    // only plays video when dialog is not open
+        if(!open.five && !videoPlayed) {    // only plays video when dialog is not open
+            setVideoTime(38, 48);    
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -387,13 +403,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p onClick={() => {setStep(7); setLastStep(5); setLastOption(1);}}>
+                    <p onClick={() => {setStep(7); setVideoPlayed(false); setLastStep(5); setLastOption(1);}}>
                         "Yes, and they have been kind about it so far, but that does not change the fact that I've missed a lot of work."
                     </p>
                     <p onClick={() => {setOpen(state => ({...state, five: true})); setLastOption(2);}}>
                         "No, and I don't think I want to. I don't see what good that would do."
                     </p>
-                    <p onClick={() => {setStep(6); setLastOption(3);}}>
+                    <p onClick={() => {setStep(6); setVideoPlayed(false); setLastOption(3);}}>
                         "No, and I'm not really sure how to."
                     </p>
                 </div>
@@ -412,7 +428,10 @@ function FriendDepression(props) {
     }
 
     function step6() {
-        if(!open.six) setVideoTime(51, 63);    // only plays video when dialog is not open
+        if(!open.six && !videoPlayed) { // only plays video when dialog is not open
+            setVideoTime(51, 63);  
+            setVideoPlayed(true); 
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -428,10 +447,10 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p onClick={() => {setStep(7); setLastOption(1);}}>
+                    <p onClick={() => {setStep(7); setVideoPlayed(false); setLastOption(1);}}>
                         "Oh, really? I guess there's no harm in asking! The missing assignments have definitely been stressing me out."
                     </p>
-                    <p onClick={() => {setStep(7); setLastOption(2);}}>
+                    <p onClick={() => {setStep(7); setVideoPlayed(false); setLastOption(2);}}>
                         "Hmm, I don't think my professors would be very lenient. I could probably get by in the class without the missing assignments, but I guess I should just ask."
                     </p>
                     <p onClick={() => {setOpen(state => ({...state, six: true})); setLastOption(3);}}>
@@ -450,7 +469,10 @@ function FriendDepression(props) {
     }
 
     function step7() {
-        if(!open.seven) setVideoTime(67, 83);    // only plays video when dialog is not open
+        if(!open.seven && !videoPlayed) {   // only plays video when dialog is not open
+            setVideoTime(67, 83);    
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -484,10 +506,10 @@ function FriendDepression(props) {
                     <p onClick={() => {setOpen(state => ({...state, seven: true})); setLastOption(1);}}>
                         "I don't want to get more people involved though. My situation probably isn't serious enough."
                     </p>
-                    <p onClick={() => {setStep(8); setLastOption(2);}}>
+                    <p onClick={() => {setStep(8); setVideoPlayed(false); setLastOption(2);}}>
                         "I could probably get by on my own, but that would definitely be a big help."
                     </p>
-                    <p onClick={() => {setStep(8); setLastOption(3);}}>
+                    <p onClick={() => {setStep(8); setVideoPlayed(false); setLastOption(3);}}>
                         "Wow! If they could help out in that way that would be great! Being able to make up that work would greatly improve my grade and help with the stress."
                     </p>
                 </div>
@@ -503,7 +525,10 @@ function FriendDepression(props) {
     }
 
     function step8() {
-        setVideoTime(92, 102);    // only plays video when dialog is not open
+        if(!videoPlayed) {  // only plays video when dialog is not open
+            setVideoTime(92, 102);    
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -525,13 +550,13 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p onClick={() => {setStep(10); setLastStep(8); setLastOption(1);}}>
+                    <p onClick={() => {setStep(10); setVideoPlayed(false); setLastStep(8); setLastOption(1);}}>
                         "Yes, I have heard a little bit about them."
                     </p>
-                    <p onClick={() => {setStep(9); setLastOption(2);}}>
+                    <p onClick={() => {setStep(9); setVideoPlayed(false); setLastOption(2);}}>
                         "Hmm, I'm not sure."
                     </p>
-                    <p onClick={() => {setStep(9); setLastOption(3);}}>
+                    <p onClick={() => {setStep(9); setVideoPlayed(false); setLastOption(3);}}>
                         "No, I haven't heard of them."
                     </p>
                 </div>
@@ -540,7 +565,10 @@ function FriendDepression(props) {
     }
 
     function step9() {  
-        if(!open.nine) setVideoTime(111, 126);    // only plays video when dialog is not open
+        if(!open.nine && !videoPlayed) { // only plays video when dialog is not open
+            setVideoTime(111, 126);   
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -561,10 +589,10 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p onClick={() => {setStep(10); setLastOption(1);}}>
+                    <p onClick={() => {setStep(10); setVideoPlayed(false); setLastOption(1);}}>
                         "That does sound like something that would be helpful for me. I will look into setting up an appointment."
                     </p>
-                    <p onClick={() => {setStep(10); setLastOption(2);}}>
+                    <p onClick={() => {setStep(10); setVideoPlayed(false); setLastOption(2);}}>
                         "I don't want to talk about it anymore than I have to, but it would probably be beneficial to learn how to manage my stress."
                     </p>
                     <p onClick={() => {setOpen(state => ({...state, nine: true})); setLastOption(3);}}>
@@ -585,7 +613,10 @@ function FriendDepression(props) {
     }
 
     function step10() {
-        if(!open.ten) setVideoTime(129, 142);    // only plays video when dialog is not open
+        if(!open.ten && !videoPlayed) { // only plays video when dialog is not open
+            setVideoTime(129, 142);    
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -613,10 +644,10 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p onClick={() => {setStep(12); setLastStep(10); setLastOption(1);}}>
+                    <p onClick={() => {setStep(12); setVideoPlayed(false); setLastStep(10); setLastOption(1);}}>
                         "Thank you for offering to help. I think I'll take you up on that if I get overwhelmed or lost."
                     </p>
-                    <p onClick={() => {setStep(11); setLastOption(2);}}>
+                    <p onClick={() => {setStep(11); setVideoPlayed(false); setLastOption(2);}}>
                         "I'll figure it out on my own, I don't really think it's that serious of a problem. I'll be fine."
                     </p>
                     <p onClick={() => {setOpen(state => ({...state, ten: true})); setLastOption(3);}}>
@@ -637,7 +668,10 @@ function FriendDepression(props) {
     }
 
     function step11() {
-        if(!open.eleven) setVideoTime(146, 155);    // only plays video when dialog is not open
+        if(!open.eleven && !videoPlayed) {  // only plays video when dialog is not open
+            setVideoTime(146, 155);    
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -653,10 +687,10 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p onClick={() => {setStep(12); setLastOption(1);}}>
+                    <p onClick={() => {setStep(12); setVideoPlayed(false); setLastOption(1);}}>
                         "Yeah, you're right. I have been struggling and there's no harm in trying it out. If it helps that would be great! Thank you for helping me with all this."
                     </p>
-                    <p onClick={() => {setStep(12); setLastOption(2);}}>
+                    <p onClick={() => {setStep(12); setVideoPlayed(false); setLastOption(2);}}>
                         "I guess it wouldn't hurt. I appreciate you recommending things you think will help. It just sounds like a lot of work."
                     </p>
                     <p onClick={() => {setOpen(state => ({...state, eleven: true})); setLastOption(3);}}>
@@ -677,7 +711,10 @@ function FriendDepression(props) {
     }
 
     function step12() {
-        if(!open.twelve) setVideoTime(160, 176);    // only plays video when dialog is not open
+        if(!open.twelve && !videoPlayed) {  // only plays video when dialog is not open
+            setVideoTime(160, 176);    
+            setVideoPlayed(true);
+        }
 
         return (
             <div className="dialogue lightbrown-white-background" key={step}>
@@ -706,7 +743,7 @@ function FriendDepression(props) {
 
 
                 <div className="dialogue-options fade-in-longer">
-                    <p onClick={() => {setStep(13); setLastOption(1);}}>
+                    <p onClick={() => {setStep(13); setVideoPlayed(false); setLastOption(1);}}>
                         [ Click to finish ]
                     </p>
                 </div>
