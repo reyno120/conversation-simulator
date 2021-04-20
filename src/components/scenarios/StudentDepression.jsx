@@ -34,6 +34,7 @@ function FriendDepression(props) {
         // friendDepressionVid.current.oncanplaythrough = function() {
         //     setisLoaded(true);
         // };
+        if(window.screen.width <= 768) setisLoaded(true);
         friendDepressionVid.current.onloadedmetadata = function() {
             setisLoaded(true);
         };
