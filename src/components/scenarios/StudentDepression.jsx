@@ -31,7 +31,10 @@ function FriendDepression(props) {
 
 
     useEffect(() => {
-        friendDepressionVid.current.oncanplaythrough = function() {
+        // friendDepressionVid.current.oncanplaythrough = function() {
+        //     setisLoaded(true);
+        // };
+        friendDepressionVid.current.onloadedmetadata = function() {
             setisLoaded(true);
         };
 
