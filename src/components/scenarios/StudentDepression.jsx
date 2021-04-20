@@ -34,10 +34,10 @@ function FriendDepression(props) {
         // friendDepressionVid.current.oncanplaythrough = function() {
         //     setisLoaded(true);
         // };
-        if(window.screen.width <= 768) setisLoaded(true);
         friendDepressionVid.current.onloadedmetadata = function() {
             setisLoaded(true);
         };
+        if(!isLoaded) setTimeout(function(){ setisLoaded(true); }, 5000);
 
     }, [isLoaded]);
 
