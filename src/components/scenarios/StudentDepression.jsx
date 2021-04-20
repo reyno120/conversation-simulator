@@ -72,6 +72,7 @@ function FriendDepression(props) {
             <div className="loading-friend-depression">
                 <StudentScenarios display={''} animation={''} videoAnimation={''} />
                 <LoadingScreen fade={''} animation={'slide-up-in'} />
+                <p className="play-button" onClick={() => {friendDepressionVid.play();}}>click here</p>
 
                 {renderVideo('none')}
 

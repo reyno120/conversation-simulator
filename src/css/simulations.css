@@ -295,6 +295,9 @@
     color: rgb(65, 65, 65);
     text-decoration: none;
 }
+.play-button {
+    display: none;
+}
 @keyframes slide-page-up {
     0% {
         transform: translateY(-100%);
@@ -352,6 +355,9 @@
     .research-resources {
         flex-direction: column;
         align-items: center;
+    }
+    .play-button {
+        display: block;
     }
 }
 
