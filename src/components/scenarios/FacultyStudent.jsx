@@ -81,7 +81,7 @@ function FriendDepression(props) {
             </div>
 
             {step < 6 ? (
-                <ProgressBar color="#71421C" width={step / 5 * 100} />
+                <ProgressBar color="#E37858" width={step / 5 * 100} />
             ) : (<div style={{height: '0'}}></div>)}
 
         </div>
@@ -369,7 +369,7 @@ function FriendDepression(props) {
                         <p>
                             Have you had a conversation like this? Caring for student's mental health isn't a job requirement, but being aware of the resources
                             available empowers you to help them. You can find professional training for the ODOS Student of Concern Reporting System offered in <em>Purdue Today</em>.
-                            You can also contact <a href="mailto:syeagley@purdue.edu">Steven Yeagley</a> to attend a training session typically offered 2-3 times a semester,
+                            You can also contact <a href="https://www.purdue.edu/odos/" target="_blank" rel="noopener noreferrer">ODOS</a> to attend a training session typically offered 2-3 times a semester,
                             or to schedule one for your department.
                         </p>
                         <div className="click-to-close" onClick={() => {setStep(6); setVideoPlayed(false); setOpen(state => ({...state, five: false}));}}>
